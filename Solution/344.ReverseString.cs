@@ -6,6 +6,7 @@ static public string ReverseString(string s) {
 	}
 	return str;
 }
+
 public class Solution {
     public string ReverseString(string s) {
 		char[] cArr = s.ToCharArray();
@@ -17,4 +18,4 @@ public class Solution {
 			cArr[length - i - 1] = c;
 		}
 		return new string(cArr);
-    }
+}
