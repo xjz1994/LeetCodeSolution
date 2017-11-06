@@ -41,5 +41,5 @@ var maxDepth = function (root) {
     return Math.max(left, right) + 1;
 }
 
-let root = Tree.CreateTree([1, 2, 5, 3, null, null, null, 4, 5]);
-console.log(printTree(root));
+// let root = Tree.CreateTree([1, 2, 5, 3, null, null, null, 4, 5]);
+// console.log(printTree(root));
