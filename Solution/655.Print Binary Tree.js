@@ -22,8 +22,17 @@ var printTree = function (root) {
             res[i][j] = "";
         }
     }
-    console.log(res);
+    setNodeNum(root, res, 0, 0, colNum);
+    return res;
 };
+
+var setNodeNum = function (node, res, depth, left, right) {
+    if (!node) return;
+    let mid = Math.floor((left + right) / 2);
+    res[depth][mid] = String(node.val);
+    setNodeNum(node.left, res, depth + 1, left, mid);
+    setNodeNum(node.right, res, depth + 1, mid, right);
+}
 
 var maxDepth = function (root) {
     if (!root) return 0;
