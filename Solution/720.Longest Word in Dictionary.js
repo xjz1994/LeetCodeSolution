@@ -5,10 +5,12 @@
 var longestWord = function (words) {
     let res = "";
     words = words.sort();
+    let set = new Set();
     for (let i in words) {
         let s = words[i];
-        if (s.length >= res.length && s.indexOf(res) == 0) {
-            res = s;
+        if (s.length == 1 || set.has(s.substring(0, s.length - 1))) {
+            res = s.length > res.length ? s : res;
+            set.add(s);
         }
     }
     return res;
