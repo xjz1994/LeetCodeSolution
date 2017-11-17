@@ -14,14 +14,13 @@ var splitListToParts = function (root, k) {
     let quo = Math.floor(nodeArr.length / k);
     for (let i = 0; i < k; i++) {
         let length = mod-- > 0 ? quo + 1 : quo;
-        res.push(nodeArr.slice(startIndex, startIndex + length));
-        startIndex += length;
+        res.push(nodeArr.slice(startIndex, startIndex += length));
     }
     return res;
 };
 
 // let root = LinkList.CreateLinkList([]);
 // let res = splitListToParts(root, 3)
-// let root = LinkList.CreateLinkList([1, 2, 3]);
-// let res = splitListToParts(root, 5)
+let root = LinkList.CreateLinkList([1, 2, 3]);
+let res = splitListToParts(root, 5)
 

@@ -1,8 +1,3 @@
-thi
-ith
-N
-
-
 class Solution(object):
     def countArrangement(self, N):
         if N == 0:
@@ -21,6 +16,7 @@ class Solution(object):
                 num += self.helper(N,pos+1,used)
                 used[i] = 0
         return num
+
 class Solution(object):
     def countArrangement(self, N):
         """
