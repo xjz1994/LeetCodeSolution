@@ -9,18 +9,19 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-var findFrequentTreeSum = function(root) {
+var findFrequentTreeSum = function (root) {
   let max = 0;
   let res = [];
   let m = {};
-  let helper = (node) => { 
+
+  let helper = (node) => {
     if (!node) return 0;
     let left = helper(node.left);
     let right = helper(node.right);
     let sum = left + right + node.val;
     if (m[sum]) {
       m[sum]++;
-    } else { 
+    } else {
       m[sum] = 1;
     }
     max = Math.max(m[sum], max);
@@ -28,9 +29,9 @@ var findFrequentTreeSum = function(root) {
   }
 
   helper(root);
-  
-  for (let i in m) { 
-    if (m[i] == max) { 
+
+  for (let i in m) {
+    if (m[i] == max) {
       res.push(parseInt(i));
     }
   }

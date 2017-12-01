@@ -2,7 +2,7 @@
  * @param {number[][]} people
  * @return {number[][]}
  */
-var reconstructQueue = function(people) {
+var reconstructQueue = function (people) {
     var sorter = function (a, b) {
         if (a[0] != b[0]) {
             return b[0] - a[0]
@@ -17,16 +17,4 @@ var reconstructQueue = function(people) {
     }
     return res;
 };
-class Solution(object):
-    def reconstructQueue(self, people):
-        """
-        :type people: List[List[int]]
-        :rtype: List[List[int]]
-        """
-        people = sorted(people, key=lambda x: x[1])
-        people = sorted(people, key=lambda x: -x[0])
-        res = []
-        for p in people:
-            res.insert(p[1], p)
-        return res
-        
+
