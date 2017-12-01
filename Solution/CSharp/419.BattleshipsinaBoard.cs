@@ -8,7 +8,7 @@ public int CountBattleships(char[,] board)
     {
         for (int j = 0; j < board.GetLength(1); j++)
         {
-            if (board[i, j] == 'X' &amp;&amp; (i == 0 || board[i - 1, j] != 'X') &amp;&amp; (j == 0 || board[i, j - 1] != 'X'))
+            if (board[i, j] == 'X' && (i == 0 || board[i - 1, j] != 'X') && (j == 0 || board[i, j - 1] != 'X'))
             {
                 number++;
             }

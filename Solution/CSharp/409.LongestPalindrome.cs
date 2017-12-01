@@ -12,7 +12,7 @@ public static int LongestPalindrome(string s) {
 
 	bool addCenter = false;
 	foreach (int val in dictionary.Values) {
-		if (addCenter == false &amp;&amp; val % 2 != 0) {
+		if (addCenter == false && val % 2 != 0) {
 			length++;
 			addCenter = true;
 		}

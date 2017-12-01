@@ -13,6 +13,6 @@ public class Solution {
 				k = next[k];
 			}
 		}
-		return next[length] != 0 &amp;&amp; next[length] % (length - next[length]) == 0;
+		return next[length] != 0 && next[length] % (length - next[length]) == 0;
     }
 }

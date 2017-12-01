@@ -12,7 +12,7 @@ public class Solution {
 				}
 			}
 			resultList.Add(digits[i]);
-			if (i == 0 &amp;&amp; plus == 1) {
+			if (i == 0 && plus == 1) {
 				resultList.Add(1);
 			}
 		}

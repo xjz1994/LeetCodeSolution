@@ -3,7 +3,7 @@ public class Solution {
         ListNode curNode = null;
         ListNode headNode = new ListNode(-1);
         curNode = headNode;
-        while (l1 != null &amp;&amp; l2 != null)
+        while (l1 != null && l2 != null)
         {
             if (l1.val < l2.val)
             {

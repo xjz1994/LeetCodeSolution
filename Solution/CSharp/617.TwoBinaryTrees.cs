@@ -16,19 +16,19 @@ public class Solution {
     }
     
 	public void Merge(TreeNode t1, TreeNode t2) {
-		if (t1 != null &amp;&amp; t2 != null) {
+		if (t1 != null && t2 != null) {
 			t1.val = t1.val + t2.val;
-			if (t1.left != null &amp;&amp; t2.left != null) {
+			if (t1.left != null && t2.left != null) {
 				Merge(t1.left, t2.left);
 			}
-			if (t1.right != null &amp;&amp; t2.right != null) {
+			if (t1.right != null && t2.right != null) {
 				Merge(t1.right, t2.right);
 			}
 		}
-		if (t1.left == null &amp;&amp; t2.left != null) {
+		if (t1.left == null && t2.left != null) {
 			t1.left = t2.left;
 		}
-		if (t1.right == null &amp;&amp; t2.right != null) {
+		if (t1.right == null && t2.right != null) {
 			t1.right = t2.right;
 		}
 	}

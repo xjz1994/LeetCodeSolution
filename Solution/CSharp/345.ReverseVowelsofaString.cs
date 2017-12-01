@@ -26,8 +26,8 @@ public class Solution {
 		char[] cArr = s.ToArray();
 		int l = 0, r = s.Length - 1;
 		while (l < r) {
-			while (l < r &amp;&amp; !IsVowels(cArr[l])) l++;
-			while (l < r &amp;&amp; !IsVowels(cArr[r])) r--;
+			while (l < r && !IsVowels(cArr[l])) l++;
+			while (l < r && !IsVowels(cArr[r])) r--;
 
 			char temp = cArr[l];
 			cArr[l] = cArr[r];

@@ -13,7 +13,7 @@ public int[] Intersection(int[] nums1, int[] nums2) {
 	int num = 0;
 	for (int i = 0; i < length; i++) {
 		num = nums2[i];
-		if (l.Contains(num) &amp;&amp; !sameList.Contains(num)) {
+		if (l.Contains(num) && !sameList.Contains(num)) {
 			sameList.Add(num);
 		}
 	}

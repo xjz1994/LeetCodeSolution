@@ -21,7 +21,7 @@ public class Solution {
 				headB = GetIndex(headB, offset);
 			}
 
-			while (headA != null &amp;&amp; headB!=null) {
+			while (headA != null && headB!=null) {
 				if (headA.GetHashCode() == headB.GetHashCode()) {
 					return headA;
 				} else {

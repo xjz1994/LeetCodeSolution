@@ -1,10 +1,11 @@
-using System;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
-namespace ConsoleApp1
+namespace Solution
 {
-    public class Solution {
-
+    public class Solution
+    {
         public class Node {
             public Node(int row,int col) {
                 this.row = row;
@@ -49,8 +50,22 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
+            Solution s = new Solution();
 
+            //int[,] img = {
+            //    {1, 1, 1},
+            //    {1, 1, 0},
+            //    {1, 0, 1}
+            //};
+            int[,] img = {
+                { 0, 0, 0},
+                { 0, 1, 1}
+            };
+            int sr = 1;
+            int sc = 1;
+            int newColor = 1;
+            int[,] res = s.FloodFill(img, sr, sc, newColor);
+            Console.WriteLine(res);
         }
     }
 }
-

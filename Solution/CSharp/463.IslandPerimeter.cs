@@ -16,16 +16,16 @@ static public int IslandPerimeter(int[,] grid) {
 			}
 				num++;
 			}
-			if (col - 1 >= 0 &amp;&amp; grid[row, col - 1] == 0) {
+			if (col - 1 >= 0 && grid[row, col - 1] == 0) {
 				num++;
 			}
-			if (col + 1 <= colNum &amp;&amp; grid[row, col + 1] == 0) {
+			if (col + 1 <= colNum && grid[row, col + 1] == 0) {
 				num++;
 			}
-			if (row - 1 >= 0 &amp;&amp; grid[row - 1, col] == 0) {
+			if (row - 1 >= 0 && grid[row - 1, col] == 0) {
 				num++;
 			}
-			if (row + 1 <= rowNum &amp;&amp; grid[row + 1, col] == 0) {
+			if (row + 1 <= rowNum && grid[row + 1, col] == 0) {
 				num++;
 			}
 		}

@@ -8,7 +8,7 @@
  */
 public class Solution {
     public TreeNode InvertTree(TreeNode root) {
-        if(root==null||(root.left==null&amp;&amp;root.right==null)) return root;
+        if(root==null||(root.left==null&&root.right==null)) return root;
         var tem = root.left;
         root.left = root.right;
         root.right = tem;

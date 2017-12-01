@@ -5,7 +5,7 @@
 public class Solution {
     public bool WordPattern(string pattern, string str) {
 		string[] strArr = str.Split(' ');
-		if (pattern.Length != strArr.Length || (pattern.Length == 0 &amp;&amp; str.Length == 0)) {
+		if (pattern.Length != strArr.Length || (pattern.Length == 0 && str.Length == 0)) {
 			return false;
 		}
 		Dictionary<char, string> dict = new Dictionary<char, string>();

@@ -16,11 +16,11 @@ public class Solution {
     }
     
 	public bool IsPair(char c1,char c2) {
-		if ((c1 == '(' &amp;&amp; c2 == ')') || (c1 == ')' &amp;&amp; c2 == '(')) {
+		if ((c1 == '(' && c2 == ')') || (c1 == ')' && c2 == '(')) {
 			return true;
-		}else if ((c1 == '{' &amp;&amp; c2 == '}') || (c1 == '}' &amp;&amp; c2 == '{')) {
+		}else if ((c1 == '{' && c2 == '}') || (c1 == '}' && c2 == '{')) {
 			return true;
-		}else if ((c1 == '[' &amp;&amp; c2 == ']') || (c1 == ']' &amp;&amp; c2 == '[')) {
+		}else if ((c1 == '[' && c2 == ']') || (c1 == ']' && c2 == '[')) {
 			return true;
 		}
 		return false;

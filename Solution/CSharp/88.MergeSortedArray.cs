@@ -3,7 +3,7 @@ public class Solution {
         int index = nums1.Length - 1;
         int index1 = m - 1;
         int index2 = n - 1;
-        while (index1 >= 0 &amp;&amp; index2 >= 0)
+        while (index1 >= 0 && index2 >= 0)
         {
             if (nums1[index1] > nums2[index2])
             {

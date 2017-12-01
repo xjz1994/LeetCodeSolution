@@ -5,7 +5,7 @@ public class Solution {
         for (int i = 0; i < s.Length; i++) {
             if (s[i] != ' ') {
                 newIndex = i;
-                while (newIndex < s.Length &amp;&amp; s[newIndex] != ' ') {
+                while (newIndex < s.Length && s[newIndex] != ' ') {
                     newIndex++;
                 }
                 sum++;

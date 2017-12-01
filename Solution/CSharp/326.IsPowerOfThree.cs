@@ -6,7 +6,7 @@ public static bool IsPowerOfThree(int n) {
 	bool isPower = false;
 	while (num >= 1) {
 		num = num / 3;
-		if (num == 1 &amp;&amp; num == (int)num) {
+		if (num == 1 && num == (int)num) {
 			return true;
 		}
 	}
@@ -24,6 +24,6 @@ public static bool IsPowerOfThree(int n) {
 class Solution {
 public:
     bool isPowerOfThree(int n) {
-        return (n > 0 &amp;&amp; int(log10(n) / log10(3)) - log10(n) / log10(3) == 0);
+        return (n > 0 && int(log10(n) / log10(3)) - log10(n) / log10(3) == 0);
     }
 };
