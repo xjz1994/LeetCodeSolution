@@ -13,19 +13,19 @@ var maxAreaOfIsland = function (grid) {
                 let pos = queue.shift();
                 let posRow = pos.r;
                 let posCol = pos.c;
-                if (posRow >= 1 &amp;&amp; grid[posRow - 1][posCol] == 1 &amp;&amp; !posSet.has(getPosStr(posRow - 1, posCol))) {
+                if (posRow >= 1 && grid[posRow - 1][posCol] == 1 && !posSet.has(getPosStr(posRow - 1, posCol))) {
                     queue.push({ r: posRow - 1, c: posCol });
                     posSet.add(getPosStr(posRow - 1, posCol));
                 }
-                if (posRow < grid.length - 1 &amp;&amp; grid[posRow + 1][posCol] == 1 &amp;&amp; !posSet.has(getPosStr(posRow + 1, posCol))) {
+                if (posRow < grid.length - 1 && grid[posRow + 1][posCol] == 1 && !posSet.has(getPosStr(posRow + 1, posCol))) {
                     queue.push({ r: posRow + 1, c: posCol });
                     posSet.add(getPosStr(posRow + 1, posCol));
                 }
-                if (posCol >= 1 &amp;&amp; grid[posRow][posCol - 1] == 1 &amp;&amp; !posSet.has(getPosStr(posRow, posCol - 1))) {
+                if (posCol >= 1 && grid[posRow][posCol - 1] == 1 && !posSet.has(getPosStr(posRow, posCol - 1))) {
                     queue.push({ r: posRow, c: posCol - 1 });
                     posSet.add(getPosStr(posRow, posCol - 1));
                 }
-                if (posCol < row.length - 1 &amp;&amp; grid[posRow][posCol + 1] == 1 &amp;&amp; !posSet.has(getPosStr(posRow, posCol + 1))) {
+                if (posCol < row.length - 1 && grid[posRow][posCol + 1] == 1 && !posSet.has(getPosStr(posRow, posCol + 1))) {
                     queue.push({ r: posRow, c: posCol + 1 });
                     posSet.add(getPosStr(posRow, posCol + 1));
                 }
