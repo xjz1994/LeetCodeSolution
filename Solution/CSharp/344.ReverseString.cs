@@ -1,12 +1,3 @@
-static public string ReverseString(string s) {
-	int length = s.Length;
-	string str = "";
-	for (int i = length - 1; i >= 0; i--) {
-		str += s[i];
-	}
-	return str;
-}
-
 public class Solution {
     public string ReverseString(string s) {
 		char[] cArr = s.ToCharArray();
