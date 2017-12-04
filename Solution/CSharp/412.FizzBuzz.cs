@@ -1,17 +1,77 @@
-public class Solution {
-    public IList<string> FizzBuzz(int n) {
-		List<string> list = new List<string>();
-		for (int index = 1; index <= n; index++) {//=D2=AA=B4=D31=BF=AA=CA=BC=A3=AC=C1=ED=CD=E2=D2=AA=D7=A2=D2=E20%=C8=CE=D2=E2=CA=FD=D7=D6=B6=BC=CA=C70
-			if (index % 3 == 0 && index % 5 == 0) {
-				list.Add("FizzBuzz");
-			} else if (index % 3 == 0) {
-				list.Add("Fizz");
-			} else if (index % 5 == 0) {
-				list.Add("Buzz");
-			} else {
-				list.Add(index.ToString());
-			}
-		}
-		return list;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Solution
+{
+    class Solution
+    {
+        // bad version
+        public IList<string> FizzBuzz(int n)
+        {
+            List<string> list = new List<string>();
+            for (int index = 1; index <= n; index++)
+            {
+                if (index % 3 == 0 && index % 5 == 0)
+                {
+                    list.Add("FizzBuzz");
+                }
+                else if (index % 3 == 0)
+                {
+                    list.Add("Fizz");
+                }
+                else if (index % 5 == 0)
+                {
+                    list.Add("Buzz");
+                }
+                else
+                {
+                    list.Add(index.ToString());
+                }
+            }
+            return list;
+        }
+
+        // using Linq
+        public List<string> FizzBuzz(int n)
+        {
+            var list = Enumerable.Range(1, n).Select((i) =>
+            {
+                if (i % 15 == 0)
+                {
+                    return "FizzBuzz";
+                }
+                else if (i % 3 == 0)
+                {
+                    return "Fizz";
+                }
+                else if (i % 5 == 0)
+                {
+                    return "Buzz";
+                }
+                else
+                {
+                    return i.ToString();
+                }
+            });
+            return list.ToList();
+        }
+
+        // one line version,using Linq
+        public List<string> FizzBuzz(int n)
+        {
+            return Enumerable.Range(1, n).Select(i => i % 15 == 0 ? "FizzBuzz" : i % 3 == 0 ? "Fizz" : i % 5 == 0 ? "Buzz" : i.ToString()).ToList();
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var s = new Solution();
+            List<string> res = s.FizzBuzz(15);
+            Console.WriteLine(res);
+        }
     }
 }
