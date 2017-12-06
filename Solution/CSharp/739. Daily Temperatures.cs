@@ -19,6 +19,24 @@ namespace Solution {
         }
     }
 
+    public class Solution2 {
+        public int[] DailyTemperatures(int[] temperatures) {
+            int[] res = new int[temperatures.Length];
+            Dictionary<int,int> dict = new Dictionary<int, int>();
+            for(var i = temperatures.Length - 1; i >= 0; i--) {
+                res[i] = Int32.MaxValue;
+                foreach(int key in dict.Keys) {
+                    if (temperatures[i] < key) {
+                        res[i] = Math.Min(res[i], dict[key] - i);
+                    }
+                }
+                dict[temperatures[i]] = i;
+                res[i] = res[i] == Int32.MaxValue ? 0 : res[i];
+            }
+            return res;
+        }
+    }
+
     class Program {
         static void Main(string[] args) {
             Solution s = new Solution();
