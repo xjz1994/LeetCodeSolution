@@ -26,9 +26,9 @@ namespace ConsoleApp1
             return true;
         }
     }
+    
     class Program
     {
-
         static void Main(string[] args)
         {
             var s = new Solution();
