@@ -2,13 +2,13 @@
       bool IsBadVersion(int version); */
 
 public class Solution : VersionControl {
-    public int FirstBadVersion (int n) {
+    public int FirstBadVersion(int n) {
         var res = -1;
         var low = 1;
         var high = n;
         while (low <= high) {
             var mid = low + (high - low) / 2;
-            if (IsBadVersion (mid)) {
+            if (IsBadVersion(mid)) {
                 res = mid;
                 high = mid - 1;
             } else {

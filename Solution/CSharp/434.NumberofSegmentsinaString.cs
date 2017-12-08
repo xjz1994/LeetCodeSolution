@@ -1,5 +1,5 @@
 public class Solution {
-    public int CountSegments (string s) {
+    public int CountSegments(string s) {
         int sum = 0;
         int newIndex = 0;
         for (int i = 0; i < s.Length; i++) {

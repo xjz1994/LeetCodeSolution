@@ -17,30 +17,30 @@ using System.Text;
 namespace Solution {
 
     public class Solution {
-        public int AddDigits (int num) {
-            char[] nums = num.ToString ().ToCharArray ();
+        public int AddDigits(int num) {
+            char[] nums = num.ToString().ToCharArray();
             if (num / 10 >= 1) {
                 int sum = 0;
                 foreach (char c in nums) {
-                    sum += (Convert.ToInt32 (c) - 48);
+                    sum += (Convert.ToInt32(c) - 48);
                 }
-                return AddDigits (sum);
+                return AddDigits(sum);
             } else {
                 return num;
             }
         }
 
         //one line solution
-        public int AddDigits (int num) {
+        public int AddDigits(int num) {
             return (num - 1) % 9 + 1;
         }
     }
 
     class Program {
-        static void Main (string[] args) {
-            var s = new Solution ();
-            var res = s.AddDigits (38);
-            Console.WriteLine (res);
+        static void Main(string[] args) {
+            var s = new Solution();
+            var res = s.AddDigits(38);
+            Console.WriteLine(res);
         }
     }
 }

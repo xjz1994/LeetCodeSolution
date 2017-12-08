@@ -10,13 +10,13 @@ namespace Solution {
     class Solution {
 
         // using Array.Sort O(nlogn)
-        public int SingleNumber (int[] nums) {
+        public int SingleNumber(int[] nums) {
             int num = 0;
             int length = nums.Length;
             if (length == 1) {
                 return nums[0];
             }
-            Array.Sort (nums);
+            Array.Sort(nums);
             for (int i = 0; i < length; i += 2) {
                 if (i + 1 < length) {
                     if (nums[i] == nums[i + 1]) {
@@ -34,10 +34,10 @@ namespace Solution {
         }
 
         // using Dictionary O(n)
-        public int SingleNumber (int[] nums) {
-            Dictionary<int, int> dict = new Dictionary<int, int> ();
+        public int SingleNumber(int[] nums) {
+            Dictionary<int, int> dict = new Dictionary<int, int>();
             foreach (var i in nums) {
-                if (dict.ContainsKey (i)) {
+                if (dict.ContainsKey(i)) {
                     dict[i]++;
                 } else {
                     dict[i] = 1;
@@ -56,11 +56,11 @@ namespace Solution {
     }
 
     class Program {
-        static void Main (string[] args) {
-            var s = new Solution ();
+        static void Main(string[] args) {
+            var s = new Solution();
             int[] arr = { 1, 2, 3, 4, 4 };
-            var res = s.SingleNumber (arr);
-            Console.WriteLine (res);
+            var res = s.SingleNumber(arr);
+            Console.WriteLine(res);
         }
     }
 }

@@ -1,7 +1,7 @@
 public class Solution {
-    public List<int> FindAnagrams (string s, string p) {
-        List<int> list = new List<int> ();
-        if (string.IsNullOrWhiteSpace (s) || s.Length < p.Length)
+    public List<int> FindAnagrams(string s, string p) {
+        List<int> list = new List<int>();
+        if (string.IsNullOrWhiteSpace(s) || s.Length < p.Length)
             return list;
         int sum = 0;
         int[] pArray = new int[26];
@@ -19,7 +19,7 @@ public class Solution {
                 continue;
             }
             if (endIndex - startIndex + 1 == p.Length) {
-                if (sum1 == sum) list.Add (startIndex);
+                if (sum1 == sum) list.Add(startIndex);
                 sum1 -= s[startIndex++] - 'a';
             }
         }

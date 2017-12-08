@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ConsoleApp1 {
     public class Solution {
-        public int NumberOfArithmeticSlices (int[] A) {
+        public int NumberOfArithmeticSlices(int[] A) {
             int n = A.Length;
             if (n < 3) return 0;
             int[] dp = new int[n];
@@ -19,10 +19,10 @@ namespace ConsoleApp1 {
     }
 
     class Program {
-        static void Main (string[] args) {
-            var s = new Solution ();
+        static void Main(string[] args) {
+            var s = new Solution();
             int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
-            var res = s.NumberOfArithmeticSlices (arr);
+            var res = s.NumberOfArithmeticSlices(arr);
         }
     }
 }

@@ -1,5 +1,5 @@
 public class Solution {
-    public void Merge (int[] nums1, int m, int[] nums2, int n) {
+    public void Merge(int[] nums1, int m, int[] nums2, int n) {
         int index = nums1.Length - 1;
         int index1 = m - 1;
         int index2 = n - 1;

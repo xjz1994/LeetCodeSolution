@@ -1,4 +1,4 @@
-static public int[] CountBits (int n) {
+static public int[] CountBits(int n) {
     int[] arr = new int[n + 1];
     arr[0] = 0;
 

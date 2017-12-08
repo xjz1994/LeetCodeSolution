@@ -18,10 +18,10 @@ using System.Collections.Generic;
 
 namespace Solution {
     public class Solution {
-        public int IslandPerimeter (int[, ] grid) {
+        public int IslandPerimeter(int[, ] grid) {
             int res = 0;
-            int rowNum = grid.GetLength (0);
-            int colNum = grid.GetLength (1);
+            int rowNum = grid.GetLength(0);
+            int colNum = grid.GetLength(1);
             if (grid == null || rowNum == 0 || colNum == 0)
                 return res;
             for (int row = 0; row < rowNum; row++) {
@@ -38,14 +38,14 @@ namespace Solution {
         }
     }
     class Program {
-        static void Main (string[] args) {
-            var s = new Solution ();
+        static void Main(string[] args) {
+            var s = new Solution();
             int[, ] arr = { { 0, 1, 0, 0 },
                 { 1, 1, 1, 0 },
                 { 0, 1, 0, 0 },
                 { 1, 1, 0, 0 }
             };
-            var res = s.IslandPerimeter (arr);
+            var res = s.IslandPerimeter(arr);
         }
     }
 }

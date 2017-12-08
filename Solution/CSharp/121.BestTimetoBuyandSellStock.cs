@@ -1,6 +1,6 @@
 public class Solution {
 
-    public int MaxProfit (int[] prices) {
+    public int MaxProfit(int[] prices) {
         if (prices.Length == 0) {
             return 0;
         }

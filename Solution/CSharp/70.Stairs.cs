@@ -1,4 +1,4 @@
-    public int ClimbStairs (int n) {
+    public int ClimbStairs(int n) {
         if (n == 0)
             return 0;
         int pre = 0;
@@ -10,7 +10,7 @@
             pre = tempCur;
             return cur;
         }
-        static public int[] Fibonacci (int n) {
+        static public int[] Fibonacci(int n) {
             int[] arr = new int[n + 1];
             arr[0] = 0;
             arr[1] = 1;
