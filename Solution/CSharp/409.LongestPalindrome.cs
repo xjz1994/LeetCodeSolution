@@ -1,10 +1,10 @@
-public static int LongestPalindrome(string s) {
+public static int LongestPalindrome (string s) {
 	int length = 0;
-	Dictionary<char, int> dictionary = new Dictionary<char, int>();
+	Dictionary<char, int> dictionary = new Dictionary<char, int> ();
 	int value = 0;
 	foreach (char c in s) {
-		if (dictionary.TryGetValue(c, out value)) {
-			dictionary[c]+=1;
+		if (dictionary.TryGetValue (c, out value)) {
+			dictionary[c] += 1;
 		} else {
 			dictionary[c] = 1;
 		}
@@ -18,7 +18,7 @@ public static int LongestPalindrome(string s) {
 		}
 		if (val > 1) {
 			length += (val - val % 2);
-		} 
+		}
 	}
 	return length;
 }

@@ -1,4 +1,4 @@
-static public int MissingNumber(int[] nums) {
+static public int MissingNumber (int[] nums) {
 	if (nums.Length == 0) {
 		return 0;
 	}
@@ -19,11 +19,11 @@ static public int MissingNumber(int[] nums) {
 	}
 }
 class Solution {
-public:
-    int missingNumber(vector<int>&amp; nums) {
-        int x = 0;
-        for (int i = 0; i <= nums.size(); i++) x ^= i;
-        for (auto n : nums) x ^= n;
-        return x;
-    }
+	public:
+		int missingNumber (vector<int> & amp; nums) {
+			int x = 0;
+			for (int i = 0; i <= nums.size (); i++) x ^= i;
+			for (auto n: nums) x ^= n;
+			return x;
+		}
 };

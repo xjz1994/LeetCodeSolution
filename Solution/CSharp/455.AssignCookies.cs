@@ -1,6 +1,6 @@
-public int FindContentChildren(int[] g, int[] s) {
-	Array.Sort(g);
-	Array.Sort(s);
+public int FindContentChildren (int[] g, int[] s) {
+	Array.Sort (g);
+	Array.Sort (s);
 	int feed = 0;
 	int childNum = g.Length;
 	int cookiesNum = s.Length;

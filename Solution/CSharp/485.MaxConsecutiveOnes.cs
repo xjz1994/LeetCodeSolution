@@ -1,4 +1,4 @@
-static public int FindMaxConsecutiveOnes(int[] nums) {
+static public int FindMaxConsecutiveOnes (int[] nums) {
 	if (nums.Length == 0) {
 		return 0;
 	}

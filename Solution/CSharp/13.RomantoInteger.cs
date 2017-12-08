@@ -1,8 +1,6 @@
 public class Solution {
-    public int RomanCharToInt(char c)
-    {
-        switch (c)
-        {
+    public int RomanCharToInt (char c) {
+        switch (c) {
             case 'I':
                 return 1;
             case 'V':
@@ -22,20 +20,15 @@ public class Solution {
         }
     }
 
-    public int RomanToInt(string s)
-    {
+    public int RomanToInt (string s) {
         int length = s.Length;
         int i = length - 1;
-        int sum = RomanCharToInt(s[i--]);
-        while (i >= 0)
-        {
-            if (RomanCharToInt(s[i + 1]) > RomanCharToInt(s[i]))
-            {
-                sum -= RomanCharToInt(s[i--]);
-            }
-            else
-            {
-                sum += RomanCharToInt(s[i--]);
+        int sum = RomanCharToInt (s[i--]);
+        while (i >= 0) {
+            if (RomanCharToInt (s[i + 1]) > RomanCharToInt (s[i])) {
+                sum -= RomanCharToInt (s[i--]);
+            } else {
+                sum += RomanCharToInt (s[i--]);
             }
         }
         return sum;

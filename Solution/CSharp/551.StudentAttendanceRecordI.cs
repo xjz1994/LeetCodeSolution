@@ -2,10 +2,10 @@
 'L'
 'P'
 public class Solution {
-    public bool CheckRecord(string s) {
+	public bool CheckRecord (string s) {
 		int lateNum = 0;
 		int absentNum = 0;
-		foreach(var i in s) {
+		foreach (var i in s) {
 			if (i == 'L') {
 				lateNum++;
 			} else {
@@ -19,5 +19,5 @@ public class Solution {
 			}
 		}
 		return true;
-    }
+	}
 }

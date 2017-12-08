@@ -1,4 +1,4 @@
-		static public int[] TwoSum(int[] numbers, int target) {
+		static public int[] TwoSum (int[] numbers, int target) {
 			if (numbers == null || numbers.Length < 1) {
 				return null;
 			}
@@ -8,8 +8,8 @@
 					right--;
 				} else if (numbers[left] + numbers[right] < target) {
 					left++;
-				}else if(numbers[left] + numbers[right] == target) {
-					int[] result = { left + 1,right + 1};
+				} else if (numbers[left] + numbers[right] == target) {
+					int[] result = { left + 1, right + 1 };
 					return result;
 				}
 			}

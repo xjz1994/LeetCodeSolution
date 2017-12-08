@@ -1,25 +1,25 @@
 public class Solution {
-    public bool HasCycle(ListNode head) {
+	public bool HasCycle (ListNode head) {
 		if (head == null) {
 			return false;
 		}
 		ListNode node = head;
-		HashSet<int> hashSet = new HashSet<int>();
-		hashSet.Add(node.GetHashCode());
+		HashSet<int> hashSet = new HashSet<int> ();
+		hashSet.Add (node.GetHashCode ());
 		while (node.next != null) {
 			node = node.next;
-			int hash = node.GetHashCode();
-			if (hashSet.Contains(hash)) {
+			int hash = node.GetHashCode ();
+			if (hashSet.Contains (hash)) {
 				return true;
 			} else {
-				hashSet.Add(hash);
+				hashSet.Add (hash);
 			}
 		}
 		return false;
-    }
+	}
 }
 public class Solution {
-    public bool HasCycle(ListNode head) {
+	public bool HasCycle (ListNode head) {
 		if (head == null || head.next == null) {
 			return false;
 		}
@@ -33,5 +33,5 @@ public class Solution {
 			}
 		}
 		return false;
-    }
+	}
 }

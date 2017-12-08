@@ -1,5 +1,3 @@
-
-
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -12,24 +10,24 @@
 public class Solution {
 	public int tilt = 0;
 
-	public int FindTilt(TreeNode root) {
-		GetTilt(root);
+	public int FindTilt (TreeNode root) {
+		GetTilt (root);
 		return tilt;
 	}
 
-	public int GetTilt(TreeNode root) {
+	public int GetTilt (TreeNode root) {
 		if (root == null) {
 			return 0;
 		}
 		int l = 0;
 		int r = 0;
 		if (root.left != null) {
-			l = GetTilt(root.left);
+			l = GetTilt (root.left);
 		}
 		if (root.right != null) {
-			r = GetTilt(root.right);
+			r = GetTilt (root.right);
 		}
-		tilt += Math.Abs(l - r);
+		tilt += Math.Abs (l - r);
 		return l + r + root.val;
 	}
 }

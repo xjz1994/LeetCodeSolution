@@ -8,42 +8,42 @@
  * }
  */
 public class Solution {
-    public bool IsSymmetric(TreeNode root) {
+	public bool IsSymmetric (TreeNode root) {
 		if (root == null) return true;
-		Queue<TreeNode> queue = new Queue<TreeNode>();
-		queue.Enqueue(root);
+		Queue<TreeNode> queue = new Queue<TreeNode> ();
+		queue.Enqueue (root);
 		while (queue.Count > 0) {
 			int count = queue.Count;
-			List<int?> nextLevel = new List<int?>();
+			List<int?> nextLevel = new List<int?> ();
 			for (int i = 0; i < count; i++) {
-				TreeNode curNode = queue.Dequeue();
+				TreeNode curNode = queue.Dequeue ();
 				if (curNode.left != null) {
-					queue.Enqueue(curNode.left);
-					nextLevel.Add(curNode.left.val);
+					queue.Enqueue (curNode.left);
+					nextLevel.Add (curNode.left.val);
 				} else {
-					nextLevel.Add(null);
+					nextLevel.Add (null);
 				}
 				if (curNode.right != null) {
-					queue.Enqueue(curNode.right);
-					nextLevel.Add(curNode.right.val);
+					queue.Enqueue (curNode.right);
+					nextLevel.Add (curNode.right.val);
 				} else {
-					nextLevel.Add(null);
+					nextLevel.Add (null);
 				}
 			}
-			if (!LevelIsSymmetric(nextLevel)){
+			if (!LevelIsSymmetric (nextLevel)) {
 				return false;
 			}
 		}
 		return true;
-    
-	public bool LevelIsSymmetric(List<int?> list) {
-		int left = 0;
-		int right = list.Count - 1;
-		while (right > left) {
-			if (list[left++] != list[right--]) {
-				return false;
+
+		public bool LevelIsSymmetric (List<int?> list) {
+			int left = 0;
+			int right = list.Count - 1;
+			while (right > left) {
+				if (list[left++] != list[right--]) {
+					return false;
+				}
 			}
+			return true;
 		}
-		return true;
 	}
-}
