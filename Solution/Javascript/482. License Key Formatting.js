@@ -9,7 +9,7 @@ var licenseKeyFormatting = function (S, K) {
     let groupLength = 0;
     for (let i = str.length - 1; i >= 0; i--) {
         res = str[i].toUpperCase() + res;
-        if (++groupLength == k && i != 0) {
+        if (++groupLength == K && i != 0) {
             res = "-" + res;
             groupLength = 0;
         }
