@@ -20,9 +20,7 @@ namespace Algorithm {
 		}
 
 		public static TreeNode CreateTree(int?[] arr) {
-			if (arr.Length <= 0 || arr[0] == null) {
-				return null;
-			}
+			if (arr.Length <= 0 || arr[0] == null) return null;
 			TreeNode root = Tree.CreateNode(arr[0]);
 			Queue<TreeNode> queue = new Queue<TreeNode>();
 			queue.Enqueue(root);
@@ -43,11 +41,69 @@ namespace Algorithm {
 		}
 
 		//递归先序遍历
-		public static void Walk(TreeNode node, Action<TreeNode> func) {
-			if (node != null) {
-				func(node);
-				Walk(node.left, func);
-				Walk(node.right, func);
+		public static void RecursionWalk(TreeNode node, Action<TreeNode> func) {
+			if (node == null) return;
+			func(node);
+			RecursionWalk(node.left, func);
+			RecursionWalk(node.right, func);
+		}
+
+		//非递归，先序
+		public static void PreOrderWalk(TreeNode root, Action<TreeNode> func) {
+			if (root == null) return;
+			Stack<TreeNode> stack = new Stack<TreeNode>();
+			var node = root;
+			while (node != null || stack.Count() != 0) {
+				while (node != null) {
+					stack.Push(node);
+					func(node);
+					node = node.left;
+				}
+				if (stack.Count() != 0) {
+					node = stack.Pop();
+					node = node.right;
+				}
+			}
+		}
+
+		//非递归，中序
+		public static void InOrderWalk(TreeNode root, Action<TreeNode> func) {
+			if (root == null) return;
+			Stack<TreeNode> stack = new Stack<TreeNode>();
+			var node = root;
+			while (node != null || stack.Count() != 0) {
+				while (node != null) {
+					stack.Push(node);
+					node = node.left;
+				}
+				if (stack.Count() != 0) {
+					node = stack.Pop();
+					func(node);
+					node = node.right;
+				}
+			}
+		}
+
+		//非递归，后序
+		public static void PostOrderWalk(TreeNode root, Action<TreeNode> func) {
+			if (root == null) return;
+			Stack<TreeNode> stack = new Stack<TreeNode>();
+			var node = root;
+			var lastVist = root;
+			while (node != null || stack.Count() != 0) {
+				while (node != null) {
+					stack.Push(node);
+					node = node.left;
+				}
+				node = stack.Peek();
+				if (node.right == null || node.right == lastVist) {
+					func(node);
+					lastVist = node;
+					node = null;
+					stack.Pop();
+				} else {
+					node = node.right;
+				}
 			}
 		}
 
@@ -76,41 +132,6 @@ namespace Algorithm {
 					func(node);
 					if (node.left != null) queue.Enqueue(node.left);
 					if (node.right != null) queue.Enqueue(node.right);
-				}
-			}
-		}
-
-		//深度优先，先序
-		public static void DFSWalk(TreeNode root, Action<TreeNode> func) {
-			if (root == null) return;
-			var stack = new Stack<TreeNode>();
-			stack.Push(root);
-			while (stack.Count > 0) {
-				var node = stack.Pop();
-				func(node);
-				if (node.right != null) stack.Push(node.right);
-				if (node.left != null) stack.Push(node.left);
-			}
-		}
-
-		//深度优先，中序
-		public static void InOrderTreeWalk(TreeNode root, Action<TreeNode> func) {
-			if (root == null) {
-				return;
-			}
-			Stack<TreeNode> stack = new Stack<TreeNode>();
-			TreeNode current = root;
-			while (current != null) {
-				stack.Push(current);
-				current = current.left;
-			}
-			while (stack.Count != 0) {
-				current = stack.Pop();
-				func(current); //func
-				TreeNode node = current.right;
-				while (node != null) {
-					stack.Push(node);
-					node = node.left;
 				}
 			}
 		}
