@@ -15,7 +15,7 @@ var updateBoard = function (board, click) {
     while (queue.length > 0) {
         let p = queue.shift();
         let mineNum = 0;
-        for (var i in pos) {
+        for (let i in pos) {
             let r = p.row + pos[i][0], c = p.col + pos[i][1];
             if (r >= 0 && r < board.length && c >= 0 && c < board[0].length) {
                 if (board[r][c] == "M") mineNum++;
@@ -25,7 +25,7 @@ var updateBoard = function (board, click) {
             board[p.row][p.col] = mineNum.toString();
             continue;
         }
-        for (var i in pos) {
+        for (let i in pos) {
             let r = p.row + pos[i][0], c = p.col + pos[i][1];
             if (r >= 0 && r < board.length && c >= 0 && c < board[0].length) {
                 if (board[r][c] == "E") {

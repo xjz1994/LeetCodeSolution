@@ -97,10 +97,10 @@ namespace Algorithm {
 				}
 				node = stack.Peek();
 				if (node.right == null || node.right == lastVist) {
+					stack.Pop();
 					func(node);
 					lastVist = node;
 					node = null;
-					stack.Pop();
 				} else {
 					node = node.right;
 				}
