@@ -24,7 +24,7 @@ namespace Algorithm {
 				return null;
 			}
 			TreeNode root = Tree.CreateNode(arr[0]);
-			var queue = new Queue<TreeNode>();
+			Queue<TreeNode> queue = new Queue<TreeNode>();
 			queue.Enqueue(root);
 			int index = 1;
 			while (queue.Count > 0) {
@@ -42,20 +42,19 @@ namespace Algorithm {
 			return root;
 		}
 
-		public static void Walk(TreeNode node, Action<TreeNode> func, TreeWalkType type) {
+		//递归先序遍历
+		public static void Walk(TreeNode node, Action<TreeNode> func) {
 			if (node != null) {
-				if (type == TreeWalkType.Pre) func(node);
-				Walk(node.left, func, type);
-				if (type == TreeWalkType.In) func(node);
-				Walk(node.right, func, type);
-				if (type == TreeWalkType.Post) func(node);
+				func(node);
+				Walk(node.left, func);
+				Walk(node.right, func);
 			}
 		}
 
 		//广度优先遍历
 		public static void BFSWalk(TreeNode root, Action<TreeNode> func) {
 			if (root == null) return;
-			var queue = new Queue<TreeNode>();
+			Queue<TreeNode> queue = new Queue<TreeNode>();
 			queue.Enqueue(root);
 			while (queue.Count > 0) {
 				TreeNode node = queue.Dequeue();
@@ -68,7 +67,7 @@ namespace Algorithm {
 		//广度优先,逐层遍历
 		public static void BFSWalkLevel(TreeNode root, Action<TreeNode> func) {
 			if (root == null) return;
-			var queue = new Queue<TreeNode>();
+			Queue<TreeNode> queue = new Queue<TreeNode>();
 			queue.Enqueue(root);
 			while (queue.Count > 0) {
 				int count = queue.Count;
@@ -99,7 +98,7 @@ namespace Algorithm {
 			if (root == null) {
 				return;
 			}
-			var stack = new Stack<TreeNode>();
+			Stack<TreeNode> stack = new Stack<TreeNode>();
 			TreeNode current = root;
 			while (current != null) {
 				stack.Push(current);
@@ -115,11 +114,5 @@ namespace Algorithm {
 				}
 			}
 		}
-	}
-
-	public enum TreeWalkType {
-		Pre,
-		In,
-		Post
 	}
 }
