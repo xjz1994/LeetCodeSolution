@@ -4,7 +4,12 @@
  * @return {character[][]}
  */
 var updateBoard = function (board, click) {
-    let pos = [[-1, -1], [-1, 0], [-1, 1], [0, -1], /*[0, 0],*/[0, 1], [1, -1], [1, -1], [1, 0], [1, 1]];
+    if (board[click[0]][click[1]] == "M") {
+        board[click[0]][click[1]] = "X";
+        return board;
+    }
+
+    let pos = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 0], [0, 1], [1, -1], [1, 0], [1, 1]];
 
     let queue = [{ row: click[0], col: click[1] }];
     while (queue.length > 0) {
@@ -28,17 +33,5 @@ var updateBoard = function (board, click) {
                 }
         }
     }
-    if (board[click[0]][click[1]] == "M") {
-        board[click[0]][click[1]] = "X";
-    }
     return board;
 };
-
-let board = [
-    ['E', 'E', 'E', 'E', 'E'],
-    ['E', 'E', 'M', 'E', 'E'],
-    ['E', 'E', 'E', 'E', 'E'],
-    ['E', 'E', 'E', 'E', 'E']
-];
-let click = [1, 2];
-let res = updateBoard(board, click);
