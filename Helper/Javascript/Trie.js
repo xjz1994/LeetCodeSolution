@@ -2,7 +2,7 @@
  * 前缀树
  */
 
-class Tire {
+class Trie {
     constructor() {
         this.nodes = {};
     }
@@ -44,17 +44,17 @@ class Tire {
     }
 }
 
-let tire = new Tire();
+let trie = new Trie();
 
-// tire.insert("app");
-// tire.insert("apple");
-// tire.insert("add");
-// console.log(tire.search("app"));
-// console.log(tire.search("apps"));
+// trie.insert("app");
+// trie.insert("apple");
+// trie.insert("add");
+// console.log(trie.search("app"));
+// console.log(trie.search("apps"));
 // let func = ["Trie", "insert", "insert", "insert", "insert", "insert", "insert", "search", "search", "search", "search", "search", "search", "search", "search", "search", "startsWith", "startsWith", "startsWith", "startsWith", "startsWith", "startsWith", "startsWith", "startsWith", "startsWith"]
 // let arg = [[], ["app"], ["apple"], ["beer"], ["add"], ["jam"], ["rental"], ["apps"], ["app"], ["ad"], ["applepie"], ["rest"], ["jan"], ["rent"], ["beer"], ["jam"], ["apps"], ["app"], ["ad"], ["applepie"], ["rest"], ["jan"], ["rent"], ["beer"], ["jam"]]
 
-// let tire = new Tire();
+// let trie = new Trie();
 // for (let i = 1; i < func.length; i++) {
-//     console.log(tire[func[i]](arg[i][0]));
+//     console.log(trie[func[i]](arg[i][0]));
 // }
