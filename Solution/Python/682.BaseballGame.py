@@ -1,9 +1,3 @@
-
-
-
-
-
-
 class Solution:
     def calPoints(self, ops):
         """

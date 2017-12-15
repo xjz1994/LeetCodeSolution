@@ -1,6 +1,3 @@
-direct
-
-
 # Employee info
 class Employee:
     def __init__(self, id, importance, subordinates):
@@ -10,6 +7,7 @@ class Employee:
         self.importance = importance
         # the id of direct subordinates
         self.subordinates = subordinates
+
 
 class Solution:
     def getImportance(self, employees, id):
@@ -21,10 +19,10 @@ class Solution:
         val = 0
         employDict = dict()
         for i in employees:
-            employDict.update({i.id:i})
+            employDict.update({i.id: i})
 
         emp = employDict[id]
-        if emp :
+        if emp:
             val += emp.importance
 
         sub = emp.subordinates

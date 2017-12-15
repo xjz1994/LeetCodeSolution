@@ -1,7 +1,3 @@
-
-
-
-
 class Solution(object):
     def findRadius(self, houses, heaters):
         """
