@@ -45,7 +45,7 @@ def heapify(x, i, less_p = MIN_HEAP):
             smallest = r
         if smallest != i:
             (x[i], x[smallest])=(x[smallest], x[i])
-            i  = smallest
+            i = smallest
         else:
             break
 
