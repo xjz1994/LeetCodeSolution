@@ -16,32 +16,13 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-m = {
-    -1:10,
-    -2:4,
-    -3:5,
-    -4:3,
-    -5:7,
-    -6:1,
-    -7:4,
-    -8:6,
-    -9:5,
-    0:6,
-    1:4,
-    2:8,
-    3:2,
-    4:12,
-    5:5,
-    6:5,
-    7:2,
-    8:6,
-    9:1,
-    10:4
-}
-
 # pre-defined heap type
-def MIN_HEAP(a, b): return m[a] < m[b]
-def MAX_HEAP(a, b): return m[a] > m[b]
+
+
+def MIN_HEAP(a, b): return a < b
+
+
+def MAX_HEAP(a, b): return a > b
 
 # auxiliary functions
 
@@ -190,8 +171,8 @@ class TestHeap:
         self.__assert(l == [17, 16, 10, 8, 14, 9, 3, 2, 4, 1, 7])
 
     def test_top_k(self):
-        l = [5,1,-1,-8,-7,8,-5,0,10,-4,3,4,-3,2,-2,-9,6,7,9,-6]
-        res = top_k(l, 7, MAX_HEAP)
+        l = [1, 2]
+        res = top_k(l, 2, MAX_HEAP)
         print(res)
         self.__assert(res == [16, 14, 10])
 
