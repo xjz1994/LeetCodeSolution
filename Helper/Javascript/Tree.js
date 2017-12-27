@@ -1,10 +1,3 @@
-
-module.exports.TreeWalkType = TreeWalkType = {
-    Pre: 0,
-    In: 1,
-    Post: 2
-}
-
 class TreeNode {
     constructor(val) {
         this.val = val;
@@ -46,13 +39,11 @@ module.exports.Tree = class Tree {
         return root;
     }
 
-    static Walk(node, walkType, fn) {
+    static Walk(node, fn) {
         if (node === null) return;
-        (walkType == TreeWalkType.Pre) && fn(node)
-        Tree.Walk(node.left, walkType, fn);
-        (walkType == TreeWalkType.In) && fn(node)
-        Tree.Walk(node.right, walkType, fn);
-        (walkType == TreeWalkType.Post) && fn(node)
+        fn(node);
+        Tree.Walk(node.left, fn);
+        Tree.Walk(node.right, fn);
     }
 
     static BFSWalk(node, fn) {
@@ -70,21 +61,23 @@ module.exports.Tree = class Tree {
         }
     }
 
-    static BFSRead(node) {
-        let isNull = (element, index, array) => {
-            return (element === null);
-        }
-        if (node === null) return;
-        let queue = [node];
-        while (queue.length > 0 && !queue.every(isNull)) {
-            let node = queue.shift();
-            if (node) {
-                console.log(node.val);
-                queue.push(node.left);
-                queue.push(node.right);
-            } else {
-                console.log("null");
+    //非递归中序遍历
+    static InorderTraversal(root) {
+        if (root == null) return;
+        let stack = [];
+        var node = root;
+        while (node != null || stack.length != 0) {
+            while (node != null) {
+                stack.push(node);
+                node = node.left;
+            }
+            if (stack.length != 0) {
+                node = stack.pop();
+                console.log(node.val)
+                node = node.right;
             }
         }
+        return res;
     }
+
 }
