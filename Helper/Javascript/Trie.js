@@ -2,7 +2,7 @@
  * 前缀树
  */
 
-class Trie {
+module.exports.Trie = class Trie {
     constructor() {
         this.nodes = {};
     }
@@ -44,7 +44,7 @@ class Trie {
     }
 }
 
-let trie = new Trie();
+//let trie = new Trie();
 
 // trie.insert("app");
 // trie.insert("apple");
