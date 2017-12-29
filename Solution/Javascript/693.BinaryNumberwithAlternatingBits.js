@@ -2,7 +2,7 @@
  * @param {number} n
  * @return {boolean}
  */
-var hasAlternatingBits = function(n) {
+var hasAlternatingBits = function (n) {
     let str = n.toString(2);
     let bit = -1;
     let index = 0;
@@ -16,5 +16,6 @@ var hasAlternatingBits = function(n) {
                 bit = !bit;
             }
         }
-    return true;
-};
+        return true;
+    }
+}
