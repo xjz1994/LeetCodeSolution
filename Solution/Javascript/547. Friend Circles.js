@@ -1,37 +1,45 @@
+class UF {
+    constructor(n) {
+        this.count = n;
+        this.parent = [];
+        this.parent.length = n;
+        for (let i = 0; i < n; i++) {
+            this.parent[i] = i;
+        }
+    }
+
+    find(p) {
+        while (p != this.parent[p]) {
+            p = this.parent[p];
+        }
+        return p;
+    }
+
+    union(p, q) {
+        let rootP = this.find(p);
+        let rootQ = this.find(q);
+        if (rootP == rootQ) return;
+        this.parent[rootP] = rootQ;
+        this.count--;
+    }
+}
+
 /**
  * @param {number[][]} M
  * @return {number}
  */
-
 var findCircleNum = function (M) {
-    let res = 0;
-    let copy = [];
-    for (let i in M) {
-        copy[i] = M[i].slice();
-    }
-    for (let i = 0; i < copy.length; i++) {
-        for (let j = 0; j < copy[i].length; j++) {
-            if (copy[i][j] == 1) {
-                res++;
-                DFS(i, j, copy);
+    let uf = new UF(M.length)
+    for (let i = 0; i < M.length; i++) {
+        for (let j = 0; j < M[i].length; j++) {
+            if (M[i][j] == 1) {
+                uf.union(i, j);
             }
         }
     }
-    return res;
+    return uf.count;
 };
 
-var DFS = (row, col, arr) => {
-    // let pos = [[-1, 0], [0, -1], [0, 0], [0, 1], [1, 0]];
-    // for (let i in pos) {
-    //     let r = row + pos[i][0], c = row + pos[i][1];
-    //     if (r >= 0 && r < arr.length && c >= 0 && c < arr[0].length) {
-    //         if (arr[r][c] == 1) {
-    //             arr[r][c] = 0;
-    //             DFS(r, c, arr);
-    //         }
-    //     }
-    // }
-}
 
 let m = [
     [1, 0, 0, 1],
