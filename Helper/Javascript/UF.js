@@ -1,3 +1,7 @@
+/**
+ * 并查集
+ */
+
 // class UF {
 //     constructor(n) {
 //         this.count = n;
@@ -69,30 +73,3 @@ class WeightedQuickUnionUF {
         this.find(p) == this.find(q);
     }
 }
-
-/**
- * @param {number[][]} M
- * @return {number}
- */
-var findCircleNum = function (M) {
-    let uf = new WeightedQuickUnionUF(M.length)
-    for (let i = 0; i < M.length; i++) {
-        for (let j = 0; j < M[i].length; j++) {
-            if (M[i][j] == 1) {
-                uf.union(i, j);
-            }
-        }
-    }
-    return uf.count;
-};
-
-
-let m = [
-    [1, 0, 0, 1],
-    [0, 1, 1, 0],
-    [0, 1, 1, 1],
-    [1, 0, 1, 1]
-];
-
-let res = findCircleNum(m);
-console.log(res); 
