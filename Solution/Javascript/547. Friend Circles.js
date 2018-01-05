@@ -1,32 +1,32 @@
-// class UF {
-//     constructor(n) {
-//         this.count = n;
-//         this.parent = [];
-//         this.parent.length = n;
-//         for (let i = 0; i < n; i++) {
-//             this.parent[i] = i;
-//         }
-//     }
+class UF {
+    constructor(n) {
+        this.count = n;
+        this.parent = [];
+        this.parent.length = n;
+        for (let i = 0; i < n; i++) {
+            this.parent[i] = i;
+        }
+    }
 
-//     find(p) {
-//         while (p != this.parent[p]) {
-//             p = this.parent[p];
-//         }
-//         return p;
-//     }
+    find(p) {
+        while (p != this.parent[p]) {
+            p = this.parent[p];
+        }
+        return p;
+    }
 
-//     union(p, q) {
-//         let rootP = this.find(p);
-//         let rootQ = this.find(q);
-//         if (rootP == rootQ) return;
-//         this.parent[rootP] = rootQ;
-//         this.count--;
-//     }
+    union(p, q) {
+        let rootP = this.find(p);
+        let rootQ = this.find(q);
+        if (rootP == rootQ) return;
+        this.parent[rootP] = rootQ;
+        this.count--;
+    }
 
-//     connented(p, q) {
-//         this.find(p) == this.find(q);
-//     }
-// }
+    connented(p, q) {
+        this.find(p) == this.find(q);
+    }
+}
 
 /**
  * 加权并查集
