@@ -12,6 +12,23 @@ let InsertSort = (arr) => {
     }
 }
 
+let ShellSort = (array) => {
+    var length = array.length,
+        gap = Math.floor(length / 2);
+    while (gap > 0) {
+        for (var i = gap; i < length; i++) {
+            for (var j = i; 0 < j; j -= gap) {
+                if (array[j - gap] > array[j]) {
+                    swap(array, j - gap, j);
+                } else {
+                    break;
+                }
+            }
+        }
+        gap = Math.floor(gap / 2);
+    }
+}
+
 let QuickSort = (arr) => {
     let sort = (arr, left, right) => {
         if (left < right) {
@@ -39,5 +56,6 @@ let swap = (arr, i, j) => {
 
 let arr = [6, 1, 2, 7, 9, 3, 4, 5, 10, 8];
 //QuickSort(arr);
-InsertSort(arr);
+//InsertSort(arr);
+ShellSort(arr);
 console.log(arr);
