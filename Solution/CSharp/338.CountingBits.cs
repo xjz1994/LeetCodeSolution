@@ -14,6 +14,5 @@ static public int[] CountBits(int n) {
             before++;
         }
     }
-
     return arr;
 }
