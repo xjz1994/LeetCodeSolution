@@ -13,7 +13,7 @@ var partitionLabels = function (S) {
         }
     }
     let res = [];
-    let min = max = 0;
+    let min = 0, max = 0;
     for (let i in posDict) {
         let start = posDict[i].start;
         let end = posDict[i].end;
