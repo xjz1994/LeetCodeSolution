@@ -1,4 +1,9 @@
-let editDistance = (word1, word2) => {
+/**
+ * @param {string} word1
+ * @param {string} word2
+ * @return {number}
+ */
+var minDistance = (word1, word2) => {
     let lenA = word1.length;
     let lenB = word2.length;
     let d = createMatrix(lenB + 1, lenA + 1);
@@ -34,18 +39,6 @@ let createMatrix = (rowNum, colNum) => {
     }
     return matrix
 }
-
-let printMatrix = (matrix) => {
-    let str = "";
-    for (let i in matrix) {
-        for (let j in matrix[i]) {
-            str += matrix[i][j] + ","
-        }
-        str += "\n";
-    }
-    console.log(str);
-}
-
 
 let a = "abcde";
 let b = "abcd";
