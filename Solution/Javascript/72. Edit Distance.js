@@ -42,4 +42,4 @@ let createMatrix = (rowNum, colNum) => {
 
 let a = "abcde";
 let b = "abcd";
-console.log(editDistance(a, b));
+console.log(minDistance(a, b));
