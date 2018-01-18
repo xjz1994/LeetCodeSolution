@@ -1,6 +1,3 @@
-
-
-
 class Solution(object):
     def findPairs(self, nums, k):
         """
@@ -8,7 +5,8 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        if k < 0: return 0
+        if k < 0:
+            return 0
         count = 0
         d = dict()
         for num in nums:
@@ -18,10 +16,10 @@ class Solution(object):
                 d[num] = 1
 
         for item in d:
-            if k == 0 :
+            if k == 0:
                 if d[item] >= 2:
                     count = count + 1
-            else: 
-                if item+k in d:
+            else:
+                if item + k in d:
                     count = count + 1
         return count
