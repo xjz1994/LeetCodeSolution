@@ -1,34 +1,47 @@
-let InsertSort = (arr) => {
-    for (let i = 1; i < arr.length; i++) {
-        let temp = arr[i];
-        for (let j = i - 1; j >= 0; j--) {
-            if (arr[j] > temp) {
-                arr[j + 1] = arr[j];
-                arr[j] = temp;
-            } else {
-                break;
-            }
+let less = (i, j) => {
+    return i < j
+}
+
+let swap = (arr, i, j) => {
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+}
+
+let printArr = (arr) => {
+    let str = "";
+    for (let i in arr) {
+        str += arr[i] + ",";
+    }
+    console.log(str);
+}
+
+//插入排序
+let InsertSort = (a) => {
+    let N = a.length;
+    for (let i = 1; i < N; i++) {
+        for (let j = i; j > 0 && less(a[j], a[j - 1]); j--) {
+            swap(a, j, j - 1);
+            printArr(a);
         }
     }
 }
 
-let ShellSort = (array) => {
-    var length = array.length,
-        gap = Math.floor(length / 2);
-    while (gap > 0) {
-        for (var i = gap; i < length; i++) {
-            for (var j = i; 0 < j; j -= gap) {
-                if (array[j - gap] > array[j]) {
-                    swap(array, j - gap, j);
-                } else {
-                    break;
-                }
+//希尔排序
+let ShellSort = (a) => {
+    let N = a.length;
+    let h = 1;
+    while (h < N / 3) { h = 3 * h + 1 };
+    while (h >= 1) {
+        for (let i = h; i < N; i++) {
+            for (let j = i; j >= h && less(a[j], a[j - h]); j -= h) {
+                swap(a, j, j - h);
+                printArr(a);
             }
         }
-        gap = Math.floor(gap / 2);
+        h = parseInt(h / 3);
     }
 }
 
+//快速排序
 let QuickSort = (arr) => {
     let sort = (arr, left, right) => {
         if (left < right) {
@@ -46,12 +59,6 @@ let QuickSort = (arr) => {
         }
     }
     sort(arr, 0, arr.length - 1);
-}
-
-let swap = (arr, i, j) => {
-    let num = arr[i];
-    arr[i] = arr[j];
-    arr[j] = num;
 }
 
 let arr = [6, 1, 2, 7, 9, 3, 4, 5, 10, 8];
