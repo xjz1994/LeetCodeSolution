@@ -8,6 +8,7 @@ class Solution(object):
             else:
                 hi = mid
         return nums[lo]
+    
 class Solution(object):
     def singleNonDuplicate(self, nums):
         """

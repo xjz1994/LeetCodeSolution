@@ -1,5 +1,3 @@
-
-
 class Solution(object):
     def imageSmoother(self, M):
         import math

@@ -1,5 +1,3 @@
-
-
 class NumArray(object):
 
     summations = []

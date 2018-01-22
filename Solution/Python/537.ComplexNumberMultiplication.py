@@ -1,4 +1,3 @@
-
 class Solution(object):
     def complexNumberMultiply(self, a, b):
         import re

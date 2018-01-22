@@ -1,5 +1,3 @@
-
-
 class Solution(object):
     def findErrorNums(self, nums):
         length = len(nums)

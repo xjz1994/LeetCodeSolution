@@ -1,9 +1,4 @@
 
-
-
-
-class MinStack(object):
-
     dataList = []
 
     def __init__(self):

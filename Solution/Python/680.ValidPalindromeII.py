@@ -1,4 +1,3 @@
-
 class Solution:
     def validPalindrome(self, s):
         """
