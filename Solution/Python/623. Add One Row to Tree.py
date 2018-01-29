@@ -11,10 +11,10 @@ class Solution:
         :type d: int
         :rtype: TreeNode
         """
-        maxdepth = 0
+        maxDepth = 0
         queue = [root]
         while queue and queue[0]:
-            maxdepth += 1
+            maxDepth += 1
             count = len(queue)
             for i in range(count):
                 node = queue.pop(0)
@@ -29,14 +29,14 @@ class Solution:
             depth += 1
             if depth is d or depth > maxDepth:
                 for i in queue:
+                    newNode = TreeNode(v)
                     if i.left:
-                        newNode = TreeNode(v)
                         newNode.left = i.left
-                        i.left = newNode
+                    i.left = newNode
+                    newNode = TreeNode(v)
                     if i.right:
-                        newNode = TreeNode(v)
                         newNode.right = i.right
-                        i.right = newNode
+                    i.right = newNode
                 break
             count = len(queue)
             for i in range(count):
@@ -53,6 +53,6 @@ root = Tree.CreateTree([4, 2, 6, 3, 1, 5])
 
 s = Solution()
 v = 1
-d = 2
+d = 1
 s.addOneRow(root, v, d)
 Tree.BFSWalk(root, lambda node: print(node.val))
