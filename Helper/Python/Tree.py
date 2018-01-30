@@ -40,7 +40,7 @@ class Tree(object):
         root = TreeNode(arr[0])
         queue = [root]
         index = 1
-        while (queue):
+        while queue:
             node = queue.pop(0)
             if(node is None):
                 continue
@@ -79,7 +79,7 @@ class Tree(object):
         :rtype: void
         """
         queue = [root]
-        while queue and queue[0]:
+        while queue:
             node = queue.pop(0)
             func(node)
             if(node.left):
@@ -91,7 +91,7 @@ class Tree(object):
     @staticmethod
     def WalkAllLevel(root, func):
         queue = [root]
-        while queue and queue[0]:
+        while queue:
             count = len(queue)
             for i in range(count):
                 node = queue.pop(0)
@@ -118,3 +118,17 @@ class Tree(object):
             while(node != None):
                 stack.append(node)
                 node = node.left
+
+    @staticmethod
+    def Tree2Array(root):
+        res = []
+        queue = [root]
+        while queue and any(queue):
+            node = queue.pop(0)
+            if node:
+                res.append(node.val)
+                queue.append(node.left)
+                queue.append(node.right)
+            else:
+                res.append(None)
+        return res

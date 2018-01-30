@@ -11,10 +11,14 @@ class Solution:
         :type d: int
         :rtype: TreeNode
         """
-        maxDepth = 0
+        if d is 1:
+            newRoot = TreeNode(v)
+            newRoot.left = root
+            return newRoot
+
         queue = [root]
-        while queue and queue[0]:
-            maxDepth += 1
+        while queue and d > 2:
+            d -= 1
             count = len(queue)
             for i in range(count):
                 node = queue.pop(0)
@@ -23,36 +27,20 @@ class Solution:
                 if node.right:
                     queue.append(node.right)
 
-        depth = 1
-        queue = [root]
-        while queue and queue[0]:
-            depth += 1
-            if depth is d or depth > maxDepth:
-                for i in queue:
-                    newNode = TreeNode(v)
-                    if i.left:
-                        newNode.left = i.left
-                    i.left = newNode
-                    newNode = TreeNode(v)
-                    if i.right:
-                        newNode.right = i.right
-                    i.right = newNode
-                break
-            count = len(queue)
-            for i in range(count):
-                node = queue.pop(0)
-                if node.left:
-                    queue.append(node.left)
-                if node.right:
-                    queue.append(node.right)
+        for curNode in queue:
+            temp = curNode.left
+            curNode.left = TreeNode(v)
+            curNode.left.left = temp
+            temp = curNode.right
+            curNode.right = TreeNode(v)
+            curNode.right.right = temp
         return root
 
 
 root = Tree.CreateTree([4, 2, 6, 3, 1, 5])
-#Tree.BFSWalk(root, lambda node: print(node.val))
-
+# print(Tree.Tree2Arr(root))
 s = Solution()
 v = 1
-d = 1
-s.addOneRow(root, v, d)
-Tree.BFSWalk(root, lambda node: print(node.val))
+d = 3
+newRoot = s.addOneRow(root, v, d)
+print(Tree.Tree2Array(newRoot))
