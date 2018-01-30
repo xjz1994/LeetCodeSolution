@@ -1,7 +1,3 @@
-2202
-3988
-Easy
-love_Fawn
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
