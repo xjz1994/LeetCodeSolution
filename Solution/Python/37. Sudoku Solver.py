@@ -65,9 +65,18 @@ class Solution:
         :type board: List[List[str]]
         :rtype: void Do not return anything, modify board in-place instead.
         """
-        for row in board:
-            for pos in row:
-                print(pos)
+        def solve(board):
+            for i in range(9):
+                for j in range(9):
+                    if board[i][j] == ".":
+                        for c in range(1, 10):
+                            board[i][j] = str(c)
+                            if self.isValidSudoku(board):
+                                solve(board)
+                            else:
+                                board[i][j] = "."
+        solve(board)
+        return board
 
 
 board = [
