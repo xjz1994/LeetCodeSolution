@@ -11,19 +11,22 @@ class Solution:
                 return False
         return True
 
-    def solve(self, board):
-        for i in range(9):
-            for j in range(9):
-                if board[i][j] == ".":
-                    for c in "123456789":
-                        if self.validPos(board, i, j, c):
-                            board[i][j] = c
-                            if self.solve(board):
-                                return True
-                            else:
-                                board[i][j] = "."
-                    return False
-        return True
+    def solve(self, board, solved):
+        while solved != 81 and board[int(solved / 9)][solved % 9] != ".":
+            solved += 1
+        if solved is 81:
+            return True
+
+        i = int(solved / 9)
+        j = solved % 9
+        for c in "123456789":
+            if self.validPos(board, i, j, c):
+                board[i][j] = c
+                if self.solve(board, solved):
+                    return True
+                else:
+                    board[i][j] = "."
+        return False
 
     def solveSudoku(self, board):
         """
