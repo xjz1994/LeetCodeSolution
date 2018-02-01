@@ -1,63 +1,28 @@
 class Solution:
-
-    def valid3by3(self, board, row, col):
-        validPos = [
-            [-1, -1], [-1, 0], [-1, 1],
-            [0, -1], [0, 0], [0, 1],
-            [1, -1], [1, 0], [1, 1]
-        ]
-        s = set()
-        for pos in validPos:
-            curVal = board[row + pos[0]][col + pos[1]]
-            if curVal is ".":
-                continue
-            if curVal in s:
+    def validPos(self, board, row, col, c):
+        x = 3 * int(row / 3)    # 3*3 start x index
+        y = 3 * int(col / 3)    # 3*3 start y index
+        for i in range(9):
+            if board[row][i] == c:
                 return False
-            s.add(curVal)
+            if board[i][col] == c:
+                return False
+            if board[x + int(i / 3)][y + i % 3] == c:
+                return False
         return True
 
-    def validRow(self, board, row):
-        s = set()
-        for curVal in board[row]:
-            if curVal is ".":
-                continue
-            if curVal in s:
-                return False
-            s.add(curVal)
-        return True
-
-    def validCol(self, board, col):
-        s = set()
-        for row in board:
-            curVal = row[col]
-            if curVal is ".":
-                continue
-            if curVal in s:
-                return False
-            s.add(curVal)
-        return True
-
-    def isValidSudoku(self, board):
-        """
-        :type board: List[List[str]]
-        :rtype: bool
-        """
-        pos3by3 = [
-            [1, 1], [1, 4], [1, 7],
-            [4, 1], [4, 4], [4, 7],
-            [7, 1], [7, 4], [7, 7]
-        ]
-        for pos in pos3by3:
-            if not self.valid3by3(board, pos[0], pos[1]):
-                return False
-
-        for row in range(0, 9):
-            if not self.validRow(board, row):
-                return False
-
-        for col in range(0, 9):
-            if not self.validCol(board, col):
-                return False
+    def solve(self, board):
+        for i in range(9):
+            for j in range(9):
+                if board[i][j] == ".":
+                    for c in "123456789":
+                        if self.validPos(board, i, j, c):
+                            board[i][j] = c
+                            if self.solve(board):
+                                return True
+                            else:
+                                board[i][j] = "."
+                    return False
         return True
 
     def solveSudoku(self, board):
@@ -65,18 +30,7 @@ class Solution:
         :type board: List[List[str]]
         :rtype: void Do not return anything, modify board in-place instead.
         """
-        def solve(board):
-            for i in range(9):
-                for j in range(9):
-                    if board[i][j] == ".":
-                        for c in range(1, 10):
-                            board[i][j] = str(c)
-                            if self.isValidSudoku(board):
-                                solve(board)
-                            else:
-                                board[i][j] = "."
-        solve(board)
-        return board
+        self.solve(board)
 
 
 board = [
