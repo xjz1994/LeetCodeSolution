@@ -119,6 +119,24 @@ class Tree(object):
                 stack.append(node)
                 node = node.left
 
+    # 使用迭代，对二叉树进行先序遍历
+    @staticmethod
+    def preorderTraversal(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        res = []
+        stack = [root]
+        while stack and stack[0]:
+            node = stack.pop()
+            res.append(node.val)
+            if node.right:
+                stack.append(node.right)
+            if node.left:
+                stack.append(node.left)
+        return res
+
     @staticmethod
     def Tree2Array(root):
         res = []
