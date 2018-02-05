@@ -5,21 +5,24 @@ class Solution:
         :rtype: int
         """
         res = 0
+        used = [False for x in range(10)]
 
-        def gen(s, n):
+        def gen(used, n, num):
             if n == 0:
-                nonlocal res
-                res += 1
+                print(num)
                 return
             else:
-                for i in "0123456789":
-                    if i is '0' or i not in s:
-                        gen(s + i, n - 1)
+                for i in range(len(used)):
+                    if not used[i]:
+                        num += str(i)
+                        used[i] = True
+                        gen(used, n - 1, num)
+                        used[i] = False
 
-        gen("", n)
+        gen(used, n, "")
         return res
 
 
 s = Solution()
-a = s.countNumbersWithUniqueDigits(3)
+a = s.countNumbersWithUniqueDigits(2)
 print(a)
