@@ -12,12 +12,9 @@ class Solution:
             gapIndex = 0
             for i in range(0, max(0, len(row) - 1)):
                 gapIndex += row[i]
-                if m.get(gapIndex):
-                    num = m[gapIndex] + 1
-                else:
-                    num = 1
+                num = m.get(gapIndex, 0) + 1
+                m[gapIndex] = num
                 maxGap = max(maxGap, num)
-                m.update({gapIndex: num})
 
         return len(wall) - maxGap
 
