@@ -4,25 +4,23 @@ class Solution:
         :type n: int
         :rtype: int
         """
-        res = 0
         used = [False for x in range(10)]
 
-        def gen(used, n, num):
-            if n == 0:
-                print(num)
-                return
-            else:
-                for i in range(len(used)):
-                    if not used[i]:
-                        num += str(i)
-                        used[i] = True
-                        gen(used, n - 1, num)
-                        used[i] = False
+        def gen(used, n, d):
+            if n == d:
+                return 1
+            total = 1
+            startIndex = 1 if d == 0 else 0
+            for i in range(startIndex, 10):
+                if not used[i]:
+                    used[i] = True
+                    total += gen(used, n, d + 1)
+                    used[i] = False
+            return total
 
-        gen(used, n, "")
-        return res
+        return gen(used, n, 0)
 
 
 s = Solution()
-a = s.countNumbersWithUniqueDigits(2)
+a = s.countNumbersWithUniqueDigits(7)
 print(a)
