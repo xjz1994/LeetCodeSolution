@@ -14,10 +14,9 @@ public class Solution {
         }
         s = s % 2;
         sum = s.ToString() + sum;
+        if (carry > 0) {
+            sum = "1" + sum;
+        }
+        return sum;
     }
-    if (carry > 0) {
-        sum = "1" + sum;
-    }
-    return sum;
-}
 }

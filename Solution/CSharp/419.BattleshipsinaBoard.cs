@@ -1,4 +1,5 @@
-public int CountBattleships(char[, ] board) {
+public class Solution {
+    public int CountBattleships(char[, ] board) {
         int number = 0;
         for (int i = 0; i < board.GetLength(0); i++) {
             for (int j = 0; j < board.GetLength(1); j++) {
@@ -8,3 +9,5 @@ public int CountBattleships(char[, ] board) {
             }
             return number;
         }
+    }
+}

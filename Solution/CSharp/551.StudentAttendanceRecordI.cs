@@ -1,6 +1,3 @@
-'A'
-'L'
-'P'
 public class Solution {
     public bool CheckRecord(string s) {
         int lateNum = 0;

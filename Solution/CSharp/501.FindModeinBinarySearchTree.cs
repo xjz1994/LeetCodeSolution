@@ -1,6 +1,3 @@
-less than or equal to
-greater than or equal to
-
 /**
  * Definition for a binary tree node.
  * public class TreeNode {

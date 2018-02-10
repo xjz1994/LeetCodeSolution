@@ -35,15 +35,16 @@ public class Solution {
             }
         }
         return true;
-
-        public bool LevelIsSymmetric(List<int?> list) {
-            int left = 0;
-            int right = list.Count - 1;
-            while (right > left) {
-                if (list[left++] != list[right--]) {
-                    return false;
-                }
-            }
-            return true;
-        }
     }
+
+    public bool LevelIsSymmetric(List<int?> list) {
+        int left = 0;
+        int right = list.Count - 1;
+        while (right > left) {
+            if (list[left++] != list[right--]) {
+                return false;
+            }
+        }
+        return true;
+    }
+}

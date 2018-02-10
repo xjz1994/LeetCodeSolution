@@ -28,11 +28,7 @@ public class Solution {
 
         while (stack.Count != 0) {
             TreeNode popelem = stack.Pop();
-            /**
-             * =D3=C3#=B1=ED=CA=BE=BA=A2=D7=D3=BD=DA=B5=E3=CA=C7=B7=F1=CE=AAnull=B5=C4=C7=E9=BF=F6
-             * =D3=C3","=BA=C5=B7=D6=B8=F4=BD=DA=B5=E3=CA=C7=B7=C0=D6=B9"12##"=BA=CD"2##"=D5=E2=D6=D6=C7=E9=BF=F6
-             * ",12##",",2##"
-             */
+
             if (popelem == null) {
                 sb.Append("#");
             } else { }

@@ -39,15 +39,14 @@ public class Solution {
         }
     }
     return null;
-}
 
-public int GetCount(ListNode head) {
-    int count = 0;
-    ListNode node = head;
-    while (node != null) {
-        count++;
-        node = node.next;
+    public int GetCount(ListNode head) {
+        int count = 0;
+        ListNode node = head;
+        while (node != null) {
+            count++;
+            node = node.next;
+        }
+        return count;
     }
-    return count;
-}
 }

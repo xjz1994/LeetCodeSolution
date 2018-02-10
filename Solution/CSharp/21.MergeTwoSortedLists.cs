@@ -15,9 +15,9 @@ public class Solution {
         }
         if (l2 != null) {
             curNode.next = l2;
-        } else if (l1 != null)
+        } else if (l1 != null) {
             curNode.next = l1;
+        }
+        return headNode.next;
     }
-    return headNode.next;
-}
 }

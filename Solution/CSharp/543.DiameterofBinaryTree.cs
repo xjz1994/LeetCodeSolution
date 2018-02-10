@@ -38,3 +38,4 @@ public class Solution {
            height and right heights */
         return (1 + Math.Max(height(node.left), height(node.right)));
     }
+}

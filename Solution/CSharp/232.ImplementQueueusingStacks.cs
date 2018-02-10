@@ -23,13 +23,14 @@ public class MyQueue {
             stack.Push(tempStack.Pop());
         }
         return peek;
-
-        public int Peek() {
-            int[] arr = stack.ToArray();
-            return arr[stack.Count - 1];
-        }
-
-        public bool Empty() {
-            return this.stack.Count == 0;
-        }
     }
+
+    public int Peek() {
+        int[] arr = stack.ToArray();
+        return arr[stack.Count - 1];
+    }
+
+    public bool Empty() {
+        return this.stack.Count == 0;
+    }
+}

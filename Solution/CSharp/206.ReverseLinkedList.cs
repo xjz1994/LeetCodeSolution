@@ -19,6 +19,7 @@ public class Solution {
         return head;
     }
 }
+
 public class Solution {
     public ListNode ReverseList(ListNode head) {
         if (head == null || head.next == null)

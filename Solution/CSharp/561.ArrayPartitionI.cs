@@ -1,5 +1,3 @@
-n
-
 public class Solution {
     public int ArrayPairSum(int[] nums) {
         Array.Sort(nums);

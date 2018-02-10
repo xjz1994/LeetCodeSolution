@@ -1,4 +1,5 @@
-static public string[] FindRelativeRanks(int[] nums) {
+public class Solution {
+    public string[] FindRelativeRanks(int[] nums) {
         int[] ranks = new int[nums.Length];
         Array.Copy(nums, ranks, nums.Length);
         Array.Sort(ranks, (int a, int b) => { return b - a; });
@@ -28,3 +29,5 @@ static public string[] FindRelativeRanks(int[] nums) {
             }
             return resultArr;
         }
+    }
+}

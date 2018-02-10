@@ -18,7 +18,7 @@ public class Solution {
         return false;
     }
 }
-public class Solution {
+public class Solution2 {
     public bool HasCycle(ListNode head) {
         if (head == null || head.next == null) {
             return false;

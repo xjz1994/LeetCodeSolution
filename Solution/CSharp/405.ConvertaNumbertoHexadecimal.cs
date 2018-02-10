@@ -1,14 +1,3 @@
-static void Main(string[] args) {
-    int i = 60;
-    string s = "";
-    while (i > 0) {
-        s = (i % 2).ToString() + s;
-        i /= 2;
-    }
-    Console.WriteLine(Convert.ToString(60, 2)); //c#=D7=AA=BB=BB=B7=BD=B7=A8
-    Console.WriteLine(s);
-}
-
 public class Solution {
     public string ToHex(int num) {
         if (num == 0) {
@@ -30,4 +19,15 @@ public class Solution {
         }
         return hexString;
     }
+}
+
+static void Main(string[] args) {
+    int i = 60;
+    string s = "";
+    while (i > 0) {
+        s = (i % 2).ToString() + s;
+        i /= 2;
+    }
+    Console.WriteLine(Convert.ToString(60, 2));
+    Console.WriteLine(s);
 }

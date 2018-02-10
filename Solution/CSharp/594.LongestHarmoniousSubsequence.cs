@@ -1,7 +1,3 @@
-5540
-14066
-Easy
-love_Fawn
 public class Solution {
     public int FindLHS(int[] nums) {
         if (nums.Length == 0) {

@@ -1,7 +1,3 @@
-22
-22
-22
-222
 public class Solution {
     public int GetSquareSum(int num) {
         int sum = 0;
