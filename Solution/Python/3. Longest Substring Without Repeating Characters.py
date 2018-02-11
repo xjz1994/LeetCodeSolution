@@ -4,28 +4,17 @@ class Solution:
         :type s: str
         :rtype: int
         """
-        # m = {}
-        # repeat = False
-        # for i in range(len(s)):
-        #     pos = m.get(s[i], [])
-        #     pos.append(i)
-        #     m[s[i]] = pos
-        #     repeat = len(pos) > 1 or repeat
+        res = startIndex = 0
+        m = {}
+        for i in range(len(s)):
+            c = s[i]
+            if c in m and startIndex <= m[c]:
+                startIndex = m[c] + 1
+            else:
+                res = max(res, i - startIndex + 1)
+            m[c] = i
+        return res
 
-        # if not repeat:
-        #     return len(s)
-
-        # res = 0
-        # l = []
-        # for i in m:
-        #     l += m[i]
-
-        # z = zip(l, l[1:])
-        # for x, y in z:
-        #     print(x, ",", y)
-        #     res = max(res, y - x)
-
-        # return res
 
 
 #s = ""
