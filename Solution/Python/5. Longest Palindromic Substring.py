@@ -40,4 +40,4 @@ s = "babad"
 #s = "cbbd"
 solution = Solution2()
 res = solution.longestPalindrome(s)
-print(res)
+# print(res)

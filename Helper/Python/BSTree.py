@@ -1,5 +1,5 @@
 # coding:utf-8
-from Tree import Tree, TreeNode, TreeWalkType
+from Tree import *
 
 
 class BSTree:
