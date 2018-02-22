@@ -23,7 +23,7 @@ class Solution:
         }
 
         def gen(i, s):
-            if i > len(digits) - 1:
+            if i == len(digits):
                 res.append(s)
                 return
             for c in m[digits[i]]:
