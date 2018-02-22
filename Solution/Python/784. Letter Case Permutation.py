@@ -10,11 +10,11 @@ class Solution:
             if i == len(S):
                 res.append(s)
                 return
-            if not S[i] in "0123456789":
+            if S[i] in "0123456789":
+                gen(i + 1, s + S[i])
+            else:
                 gen(i + 1, s + S[i].lower())
                 gen(i + 1, s + S[i].upper())
-            else:
-                gen(i + 1, s + S[i])
 
         gen(0, "")
         return res
