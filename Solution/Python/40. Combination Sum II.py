@@ -32,7 +32,33 @@ class Solution:
         return res
 
 
-s = Solution()
+class Solution2:
+    def combinationSum2(self, candidates, target):
+        """
+        :type candidates: List[int]
+        :type target: int
+        :rtype: List[List[int]]
+        """
+        res = []
+        candidates.sort()
+
+        def gen(nums, index, remain):
+            if remain == 0:
+                res.append(nums[:])
+                return
+            for i in range(index, len(candidates)):
+                cur = candidates[i]
+                if i > index and cur == candidates[i - 1]:
+                    continue
+                if cur > remain:
+                    break
+                gen(nums + [cur], i + 1, remain - cur)
+
+        gen([], 0, target)
+        return res
+
+
+s = Solution2()
 # candidates = [1, 1, 2, 3]
 # target = 3
 # candidates = [10, 1, 2, 7, 6, 1, 5]
