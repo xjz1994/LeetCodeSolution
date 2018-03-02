@@ -1,10 +1,10 @@
 class Solution:
-    def totalNQueens(self, n):
+    def solveNQueens(self, n):
         """
         :type n: int
-        :rtype: int
+        :rtype: List[List[str]]
         """
-        count = 0
+        solutions = []
 
         def available(queen, row, col):
             for k in range(row):
@@ -14,8 +14,7 @@ class Solution:
 
         def find(queen, row):
             if row == n:
-                nonlocal count
-                count += 1
+                solutions.append(queen[:])
             else:
                 for col in range(n):
                     if available(queen, row, col):
@@ -23,10 +22,19 @@ class Solution:
                         find(queen, row + 1)
 
         find([-1] * n, 0)
-        return count
+
+        res = []
+        for i in solutions:
+            solu = []
+            for index in i:
+                s = '.' * index + 'Q' + '.' * (n - index - 1)
+                solu.append(s)
+            res.append(solu)
+
+        return res
 
 
 s = Solution()
-n = 8
-res = s.totalNQueens(n)
+n = 4
+res = s.solveNQueens(n)
 print(res)
