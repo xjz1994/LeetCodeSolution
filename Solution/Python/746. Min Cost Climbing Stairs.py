@@ -1,3 +1,4 @@
+# dp
 class Solution:
     def minCostClimbingStairs(self, cost):
         """
