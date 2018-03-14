@@ -4,13 +4,10 @@ class Solution:
         :type graph: List[List[int]]
         :rtype: List[List[int]]
         """
-        if len(graph) == 0:
-            return []
-
-        res = []
+        res, last = [], len(graph) - 1
 
         def search(node, path):
-            if path[-1] == len(graph) - 1:
+            if path[-1] == last:
                 res.append(path[:])
                 return
             for i in graph[node]:
