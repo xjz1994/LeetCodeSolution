@@ -5,42 +5,42 @@ class Solution:
         :type word: str
         :rtype: bool
         """
-        pos = [[-1, 0], [1, 0], [0, -1], [0, 1]]
-
-        def check(row, col):
-            stack = []
-            stack.append([row, col, 0, None, None])
-            while stack:
-                cur = stack.pop()
-                if board[cur[0]][cur[1]] == word[cur[2]]:
-                    if cur[2] == len(word) - 1:
-                        return True
-                    for i in pos:
-                        newRow = cur[0] + i[0]
-                        newCol = cur[1] + i[1]
-                        if newRow >= 0 and newRow < len(board) and newCol >= 0 and newCol < len(board[0]):
-                            if newRow != cur[3] and newCol != cur[4]:
-                                stack.append(
-                                    [newRow, newCol, cur[2] + 1, cur[0], cur[1]])
-                            else:
-                                print(newRow, ",", newCol)
+        if not board:
             return False
-
         for i in range(len(board)):
             for j in range(len(board[0])):
-                if check(i, j):
+                if self.dfs(board, i, j, word):
                     return True
         return False
 
+    def dfs(self, board, i, j, word):
+        if len(word) == 0:
+            return True
+        if i < 0 or i >= len(board) or j < 0 or j >= len(board[0]) or word[0] != board[i][j]:
+            return False
+        tmp = board[i][j]
+        board[i][j] = "#"
+        res = self.dfs(board, i + 1, j, word[1:]) or self.dfs(board, i - 1, j, word[1:]) \
+            or self.dfs(board, i, j + 1, word[1:]) or self.dfs(board, i, j - 1, word[1:])
+        board[i][j] = tmp
+        return res
+
 
 s = Solution()
-board = [
-    ['A', 'B', 'C', 'E'],
-    ['S', 'F', 'C', 'S'],
-    ['A', 'D', 'E', 'E']
-]
-word = "ABCCED"
+# board = [
+#     ['A', 'B', 'C', 'E'],
+#     ['S', 'F', 'C', 'S'],
+#     ['A', 'D', 'E', 'E']
+# ]
+#word = "ABCCED"
 #word = "SEE"
 #word = "ABCB"
+
+board = [
+    ["a", "a", "a", "a"],
+    ["a", "a", "a", "a"],
+    ["a", "a", "a", "a"]
+]
+word = "aaaaaaaaaaaaa"
 res = s.exist(board, word)
 print(res)
