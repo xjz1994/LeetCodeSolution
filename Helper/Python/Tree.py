@@ -24,7 +24,7 @@ class Tree(object):
         :type val: int
         :rtype: TreeNode
         """
-        if val:
+        if val != None:
             return TreeNode(val)
         return None
 
