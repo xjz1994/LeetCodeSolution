@@ -8,12 +8,13 @@ class Solution:
         res = []
 
         def gen(index, path):
+            res.append(path[:])
             if index > len(nums):
                 return
-            res.append(path[:])
             for i in range(index, len(nums)):
-                if nums[i] != nums[i - 1]:
-                    gen(i + 1, path + [nums[i]])
+                if i > index and nums[i] == nums[i - 1]:
+                    continue
+                gen(i + 1, path + [nums[i]])
 
         gen(0, [])
         return res
