@@ -12,6 +12,25 @@ class Solution:
         :type n: int
         :rtype: ListNode
         """
+        start = end = head
+        for i in range(1, m):
+            start = start.next
+        for i in range(1, n):
+            end = end.next
+
+        stack = []
+        s, e = start, end
+        while s != e:
+            stack.append(s.val)
+            s = s.next
+        stack.append(e.val)
+
+        s, e = start, end
+        while s != e:
+            s.val = stack.pop()
+            s = s.next
+        e.val = stack.pop()
+
         return head
 
 
