@@ -44,7 +44,9 @@ head.next.next = ListNode(3)
 head.next.next.next = ListNode(4)
 head.next.next.next.next = ListNode(5)
 
-newHead = s.reverseBetween(head, 2, 4)
+#newHead = s.reverseBetween(head, 2, 2)
+newHead = s.reverseBetween(head, 2, 3)
+#newHead = s.reverseBetween(head, 2, 4)
 while newHead:
     print(newHead.val)
     newHead = newHead.next
