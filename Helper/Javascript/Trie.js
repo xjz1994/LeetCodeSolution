@@ -8,9 +8,9 @@ module.exports.Trie = class Trie {
     }
 
     insert(word) {
-        let node = this.nodes, cur;
+        let node = this.nodes;
         for (let i = 0; i < word.length; i++) {
-            cur = word[i];
+            let cur = word[i];
             if (!node[cur]) {
                 node[cur] = {};
             }
@@ -20,9 +20,9 @@ module.exports.Trie = class Trie {
     }
 
     search(word) {
-        let node = this.nodes, cur;
+        let node = this.nodes;
         for (let i = 0; i < word.length; i++) {
-            cur = word[i];
+            let cur = word[i];
             if (!node[cur]) {
                 return false;
             }
@@ -32,9 +32,9 @@ module.exports.Trie = class Trie {
     }
 
     startsWith(prefix) {
-        let node = this.nodes, cur;
+        let node = this.nodes;
         for (let i = 0; i < prefix.length; i++) {
-            cur = prefix[i];
+            let cur = prefix[i];
             if (!node[cur]) {
                 return false;
             }
