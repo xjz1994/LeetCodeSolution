@@ -16,19 +16,16 @@ class Solution:
         :type root: TreeNode
         :rtype: bool
         """
-        res = True
-
         def helper(node, leftMin, rightMax):
-            if not node:
-                return
+            if node is None:
+                return True
             if node.val <= rightMax or node.val >= leftMin:
-                nonlocal res
-                res = False
-            helper(node.left, min(node.val, leftMin), rightMax)
-            helper(node.right, leftMin, max(node.val, rightMax))
+                return False
+            leftRes = helper(node.left, min(node.val, leftMin), rightMax)
+            rightRes = helper(node.right, leftMin, max(node.val, rightMax))
+            return leftRes and rightRes
 
-        helper(root, float('inf'), -float('inf'))
-        return res
+        return helper(root, float('inf'), -float('inf'))
 
 
 root = Tree.CreateTree([5, 1, 4, None, None, 3, 6])
