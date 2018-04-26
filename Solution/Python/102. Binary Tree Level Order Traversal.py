@@ -20,19 +20,17 @@ class Solution:
         if root is None:
             return res
 
-        res.append([root.val])
         queue = [root]
         while queue and queue[0]:
             level = []
             count = len(queue)
             for i in range(count):
                 node = queue.pop(0)
+                level.append(node.val)
                 if node.left:
                     queue.append(node.left)
-                    level.append(node.left.val)
                 if node.right:
                     queue.append(node.right)
-                    level.append(node.right.val)
 
             if level:
                 res.append(level)

@@ -20,7 +20,6 @@ class Solution:
         if root is None:
             return res
 
-        res.append([root.val])
         queue = [root]
         isReverse = 0
         while queue and queue[0]:
@@ -28,12 +27,11 @@ class Solution:
             count = len(queue)
             for i in range(count):
                 node = queue.pop(0)
+                level.append(node.val)
                 if node.left:
                     queue.append(node.left)
-                    level.append(node.left.val)
                 if node.right:
                     queue.append(node.right)
-                    level.append(node.right.val)
 
             if level:
                 isReverse = isReverse ^ 1
