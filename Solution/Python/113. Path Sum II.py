@@ -1,6 +1,6 @@
 import sys
 sys.path.append(
-    r'C:\Users\xjz\Documents\GitHub\LeetCodeSolution\Helper\Python')
+    r'F:\xjzspace\space\LeetCodeSolution\Helper\Python')
 from Tree import *
 
 # Definition for a binary tree node.
@@ -20,17 +20,21 @@ class Solution:
         """
         res = []
 
-        def gen(path, node):
-            if node.left:
-                gen(path + [node.val], node.left)
-            if node.right:
-                gen(path + [node.val], node.right)
+        def gen(path, node, sum):
+            if node == None:
+                return
             if node.left == None and node.right == None:
-                res.append(path[::])
+                if sum - node.val == 0:
+                    res.append(path + [node.val][::])
+            if node.left:
+                gen(path + [node.val], node.left, sum - node.val)
+            if node.right:
+                gen(path + [node.val], node.right, sum - node.val)
 
-        # gen()
+        gen([], root, sum)
+        return res
 
 
-root = Tree.CreateTree([5, 4, 8, 11, 3, 4, 7, 2, None, None, 1])
-res = Solution().pathSum(root)
+root = Tree.CreateTree([5, 4, 8, 11, None, 13, 4, 7, 2, None, None, 5, 1])
+res = Solution().pathSum(root, 22)
 print(res)
