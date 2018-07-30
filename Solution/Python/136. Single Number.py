@@ -10,6 +10,6 @@ class Solution:
         return res
 
 
-nums = [4, 1, 2, 1, 2]
+nums = [4, 1, 2, 1, 2, 4, 6]
 res = Solution().singleNumber(nums)
 print(res)
