@@ -1,5 +1,11 @@
+def getHelperPath():
+    path = __file__.split("\\")[0:-1]
+    path[-2] = "Helper"
+    return "\\".join(path)
+
+
 import sys
-sys.path.append(r'F:\xjzspace\LeetCodeSolution\Helper\Python')
+sys.path.append(getHelperPath()))
 from Tree import *
 
 # Definition for a binary tree node.
@@ -26,8 +32,8 @@ class Solution:
         return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
 
 
-p = Tree.CreateTree([5, 1, 4, None, None, 3, 6])
-q = Tree.CreateTree([5, 1, 4, None, None, 3, 6])
-s = Solution()
-res = s.isSameTree(p, q)
+p=Tree.CreateTree([5, 1, 4, None, None, 3, 6])
+q=Tree.CreateTree([5, 1, 4, None, None, 3, 6])
+s=Solution()
+res=s.isSameTree(p, q)
 print(res)

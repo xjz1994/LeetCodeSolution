@@ -1,5 +1,11 @@
+def getHelperPath():
+    path = __file__.split("\\")[0:-1]
+    path[-2] = "Helper"
+    return "\\".join(path)
+
+
 import sys
-sys.path.append(r'F:\xjzspace\LeetCodeSolution\Helper\Python')
+sys.path.append(getHelperPath())
 from BSTree import *
 from Tree import *
 

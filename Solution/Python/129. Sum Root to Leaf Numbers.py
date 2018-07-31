@@ -5,7 +5,7 @@ def getHelperPath():
 
 
 import sys
-sys.path.append(getHelperPath())
+sys.path.append(getHelperPath()))
 from Tree import *
 
 
@@ -23,7 +23,7 @@ class Solution:
         :type root: TreeNode
         :rtype: int
         """
-        paths = []
+        paths=[]
 
         def dfs(node, path):
             if not node:
@@ -37,11 +37,11 @@ class Solution:
                 dfs(node.right, path + str(node.val))
 
         dfs(root, "")
-        l = [int(i) for i in paths]
+        l=[int(i) for i in paths]
         return sum(l)
 
 
 # root = Tree.CreateTree([4, 9, 0, 5, 1])
-root = Tree.CreateTree([])
-res = Solution().sumNumbers(root)
+root=Tree.CreateTree([])
+res=Solution().sumNumbers(root)
 print(res)

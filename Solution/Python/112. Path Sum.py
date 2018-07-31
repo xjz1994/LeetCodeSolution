@@ -1,6 +1,11 @@
+def getHelperPath():
+    path = __file__.split("\\")[0:-1]
+    path[-2] = "Helper"
+    return "\\".join(path)
+
+
 import sys
-sys.path.append(
-    r'C:\Users\xjz\Documents\GitHub\LeetCodeSolution\Helper\Python')
+sys.path.append(getHelperPath())
 from Tree import *
 
 # Definition for a binary tree node.

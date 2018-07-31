@@ -1,20 +1,30 @@
+def getHelperPath():
+    path = __file__.split("\\")[0:-1]
+    path[-2] = "Helper"
+    return "\\".join(path)
+
+
 import sys
-sys.path.append(
-    r'F:\xjzspace\space\LeetCodeSolution\Helper\Python')
+sys.path.append(getHelperPath())
 from Tree import *
 
 # Definition for singly-linked list.
+
+
 class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
 
-#Definition for a binary tree node.
+# Definition for a binary tree node.
+
+
 class TreeNode:
     def __init__(self, x):
         self.val = x
         self.left = None
         self.right = None
+
 
 class Solution:
     def sortedListToBST(self, head):
@@ -22,24 +32,24 @@ class Solution:
         :type head: ListNode
         :rtype: TreeNode
         """
-        if not head :
+        if not head:
             return None
-        if not head.next :
+        if not head.next:
             return TreeNode(head.val)
-        
-        slow , fast = head ,head.next.next
-        
-        while fast and fast.next :
+
+        slow, fast = head, head.next.next
+
+        while fast and fast.next:
             fast = fast.next.next
             slow = slow.next
-        
+
         curr = slow.next
         slow.next = None
-        
+
         root = TreeNode(curr.val)
         root.left = self.sortedListToBST(head)
         root.right = self.sortedListToBST(curr.next)
-        
+
         return root
 
     # def sortedListToBST(self, head):
