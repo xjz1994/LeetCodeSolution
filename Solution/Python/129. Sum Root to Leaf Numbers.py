@@ -1,6 +1,11 @@
+def getHelperPath():
+    path = __file__.split("\\")[0:-1]
+    path[-2] = "Helper"
+    return "\\".join(path)
+
+
 import sys
-sys.path.append(
-    r'F:\xjzspace\space\LeetCodeSolution\Helper\Python')
+sys.path.append(getHelperPath())
 from Tree import *
 
 
@@ -21,7 +26,10 @@ class Solution:
         paths = []
 
         def dfs(node, path):
+            if not node:
+                return
             if node.left == None and node.right == None:
+                path += str(node.val)
                 paths.append(path)
             if node.left:
                 dfs(node.left, path + str(node.val))
@@ -29,8 +37,11 @@ class Solution:
                 dfs(node.right, path + str(node.val))
 
         dfs(root, "")
-        print(paths)
+        l = [int(i) for i in paths]
+        return sum(l)
 
 
-root = Tree.CreateTree([4, 9, 0, 5, 1])
+# root = Tree.CreateTree([4, 9, 0, 5, 1])
+root = Tree.CreateTree([])
 res = Solution().sumNumbers(root)
+print(res)
