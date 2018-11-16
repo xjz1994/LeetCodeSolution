@@ -12,10 +12,10 @@ let read = (dir) => {
 //46. Permutations
 //统计没有用python解的题目
 let main = async () => {
-    let cpp = await read('./Solution/Cpp');
-    let cs = await read('./Solution/CSharp');
-    let js = await read('./Solution/Javascript');
-    let py = await read('./Solution/Python');
+    let cpp = await read('./Cpp');
+    let cs = await read('./CSharp');
+    let js = await read('./Javascript');
+    let py = await read('./Python');
 
     let solved = cpp.concat(cs).concat(js);
     let solvedSet = new Set();
