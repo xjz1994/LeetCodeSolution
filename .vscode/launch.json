@@ -11,6 +11,15 @@
             "program": "${file}"
         },
         {
+            "name": "go",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${fileDirname}",
+            "env": {},
+            "args": []
+        },
+        {
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
