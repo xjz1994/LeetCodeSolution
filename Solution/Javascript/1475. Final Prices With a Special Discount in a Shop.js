@@ -32,11 +32,12 @@ class Stack {
  */
 var finalPrices = function (prices) {
     let res = new Array(prices.length).fill(0);
+
     let stack = new Stack();
     prices.push(0);
     for (let i = 0; i < prices.length; i++) {
         while (!stack.empty() && prices[i] <= prices[stack.top()]) {
-            res[stack.top()] = prices[stack.top()] - prices[i];
+            res[stack.top()] = prices[stack.top()] - prices[i]; //单调栈
             stack.pop();
         }
         stack.push(i);
